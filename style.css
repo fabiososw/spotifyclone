@@ -1,0 +1,64 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow-x: hidden; /* Rimuove la scrollbar orizzontale */
+}
+
+/* colore tutti gli elementi*/
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+span,
+div {
+  color: #928d88 !important; /* Colore di tutto il testo */
+}
+
+/* Link */
+a {
+  color: #928d88 !important; /* colore link */
+}
+
+a:hover {
+  color: #7a7b76 !important; /* hover scuro per link */
+}
+
+.col-7 {
+  background: rgb(33, 33, 33);
+  background: linear-gradient(90deg, rgba(33, 33, 33, 1) 0%, rgba(32, 32, 32, 1) 51%, rgba(18, 18, 18, 1) 100%);
+} /* Centrale sfondo*/
+
+footer {
+  background-color: #d9534f; /* colore footer */
+}
+
+.shadow-left {
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.shadow-right {
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+}
+
+::-webkit-scrollbar {
+  width: 12px; /* Larghezza della scrollbar */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #928d88;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #000; /* sfondo della track */
+}
+
+::-webkit-scrollbar-button {
+  display: none; /* no freccette scrollbar */
+}
