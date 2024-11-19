@@ -12,7 +12,6 @@ body,
 h1,
 h2,
 h3,
-h4,
 h5,
 h6,
 p,
@@ -49,7 +48,7 @@ a:hover {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #928d88;
+  background-color: #928d88ab;
 }
 
 ::-webkit-scrollbar-track {
@@ -117,49 +116,14 @@ footer {
 }
 
 .album {
-  background: rgb(116, 98, 2);
-  background: linear-gradient(0deg, rgba(116, 98, 2, 1) 0%, rgba(208, 183, 37, 1) 100%);
+  background-image: url(https://wallpapercat.com/w/full/5/e/f/2359228-2048x1536-desktop-hd-yellowcard-band-background-image.jpg);
 }
 .durata {
-  color: rgba(255, 255, 255, 0.7) !important;
+  color: #b3b3b3 !important;
 }
-
-.navBtn {
-  background-color: rgba(128, 128, 128, 0.6) !important;
+.titolo {
+  text-shadow: 2px 2px 5px white;
 }
-
-.navBtn:hover {
-  background-color: rgba(27, 27, 27, 0.7) !important;
-}
-
-.navBtn1 {
-  background-color: rgba(27, 27, 27, 0.7) !important;
-}
-
-.custom-shadow {
-  box-shadow: 0px 0px 24px rgba(0, 0, 0, 0.7) !important;
-}
-
-.btnPlay {
-  color: #1db954 !important;
-}
-
-.songs {
-  background: rgb(38, 38, 38);
-  background: linear-gradient(0deg, rgb(22, 22, 22) 80%, rgba(66, 59, 26, 1) 90%, rgb(94, 80, 1) 100%);
-}
-footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background-color: #333;
-  color: white;
-  text-align: center;
-  padding: 10px;
-  z-index: 1000;
-}
-col-2 {
-  overflow-y: auto;
-  height: 100vh;
+.spotify {
+  color: #1db954;
 }
