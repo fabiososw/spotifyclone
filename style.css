@@ -122,3 +122,19 @@ footer {
 .durata {
   color: rgba(255, 255, 255, 0.7) !important;
 }
+
+.navBtn {
+  background-color: rgba(128, 128, 128, 0.6) !important;
+}
+
+.navBtn:hover {
+  background-color: rgba(27, 27, 27, 0.7) !important;
+}
+
+.navBtn1 {
+  background-color: rgba(27, 27, 27, 0.7) !important;
+}
+
+.custom-shadow {
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.7) !important;
+}
