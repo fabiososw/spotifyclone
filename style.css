@@ -117,8 +117,8 @@ footer {
 
 .album {
   background: rgb(61, 58, 12);
-  background: linear-gradient(0deg, rgba(61, 58, 12, 1) 0%, rgba(253, 187, 45, 1) 62%);
+  background: linear-gradient(0deg, rgba(61, 58, 12, 1) 0%, rgb(184, 148, 73) 22%);
 }
 .durata {
-  color: #b3b3b3 !important;
+  color: rgba(255, 255, 255, 0.7) !important;
 }
