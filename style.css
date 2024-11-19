@@ -148,3 +148,18 @@ footer {
   background: rgb(38, 38, 38);
   background: linear-gradient(0deg, rgb(22, 22, 22) 80%, rgba(66, 59, 26, 1) 90%, rgb(94, 80, 1) 100%);
 }
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  z-index: 1000;
+}
+col-2 {
+  overflow-y: auto;
+  height: 100vh;
+}

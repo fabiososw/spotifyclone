@@ -46,6 +46,7 @@ function getMainAlbumDetails(albumId) {
 
 // Chiama la funzione per ottenere i dettagli dell'album con l'ID specificato
 getMainAlbumDetails(554390622);
+
 const albums = document.querySelectorAll(".album");
 albums.forEach((album) => {
   album.addEventListener("click", function () {
