@@ -104,3 +104,21 @@ footer {
 .player svg:hover {
   color: white;
 }
+
+.pinguiniTattici {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+}
+
+.pinnguiniDescription {
+  color: #fff !important;
+}
+
+.album {
+  background: rgb(61, 58, 12);
+  background: linear-gradient(0deg, rgba(61, 58, 12, 1) 0%, rgba(253, 187, 45, 1) 62%);
+}
+.durata {
+  color: #b3b3b3 !important;
+}
