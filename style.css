@@ -104,3 +104,13 @@ footer {
 .player svg:hover {
   color: white;
 }
+
+#sezione1{
+  font-weight: bold;
+  color:#fff;
+  font-size:13px
+}
+.grigiogradiente{
+  background: rgb(33,33,33);
+background: linear-gradient(228deg, rgba(33,33,33,1) 0%, rgba(30,30,30,1) 25%, rgba(18,18,18,1) 51%, rgba(0,0,0,1)100%);
+}
