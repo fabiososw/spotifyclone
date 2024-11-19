@@ -48,7 +48,7 @@ a:hover {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #928d88;
+  background-color: #928d88ab;
 }
 
 ::-webkit-scrollbar-track {
@@ -103,4 +103,27 @@ footer {
 
 .player svg:hover {
   color: white;
+}
+
+.pinguiniTattici {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+}
+
+.pinnguiniDescription {
+  color: #fff !important;
+}
+
+.album {
+  background-image: url(https://wallpapercat.com/w/full/5/e/f/2359228-2048x1536-desktop-hd-yellowcard-band-background-image.jpg);
+}
+.durata {
+  color: #b3b3b3 !important;
+}
+.titolo {
+  text-shadow: 2px 2px 5px white;
+}
+.spotify {
+  color: #1db954;
 }

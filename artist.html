@@ -57,7 +57,7 @@
               data-bs-offset="0"
               class="scrollspy-example text-secondary"
               tabindex="0"
-              style="height: 400px; overflow-y: auto"
+              style="height: 50vh; overflow-y: auto"
             >
               <ul class="list-unstyled ps-2">
                 <li>Playlist per rilassarti in vacanza 🌴</li>
@@ -87,74 +87,152 @@
             </div>
           </div>
         </div>
-        <div class="col-7 center pt-2">
-          <main class="h-100 w-100">
-            <div class="album">
-              <nav class="d-flex justify-content-between">
-                <div>
-                  <button type="button" class="btn bg-black rounded-circle px-2"><i class="bi bi-chevron-left text-white"></i></button>
-                  <button type="button" class="btn bg-black rounded-circle px-2"><i class="bi bi-chevron-right text-white"></i></button>
-                </div>
-                <div class="btn-group bg-black">
-                  <button type="button" class="btn btn-black text-white" style="font-size: 0.7rem">
-                    <img src="/assets/imgs/main/image-6.jpg" class="object-fit-cover me-1" alt="" width="20px" height="20px" style="border-radius: 50%" />Lidia
-                    Nautilus...
-                  </button>
-                  <button
-                    type="button"
-                    class="btn btn-black dropdown-toggle dropdown-toggle-split rounded-start"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
-                  >
-                    <span class="visually-hidden">Toggle Dropdown</span>
-                  </button>
-                </div>
-              </nav>
-              <div class="d-flex">
-                <div class="d-flex flex-column justify-content-end m-4">
-                  <img
-                    class="shadow mt-auto"
-                    aria-hidden="false"
-                    draggable="false"
-                    loading="lazy"
-                    src="https://i.scdn.co/image/ab67616d00001e025b3cb5aa936655424de11fa2"
-                    alt="Gioventù Brucata"
-                    srcset="
-                      https://i.scdn.co/image/ab67616d00001e025b3cb5aa936655424de11fa2 150w,
-                      https://i.scdn.co/image/ab67616d00001e025b3cb5aa936655424de11fa2 300w,
-                      https://i.scdn.co/image/ab67616d0000b2735b3cb5aa936655424de11fa2 320w,
-                      https://i.scdn.co/image/ab67616d0000b2735b3cb5aa936655424de11fa2 640w
-                    "
-                    sizes="(min-width: 1280px) 130px, 130px"
-                  />
-                </div>
-                <div class="d-flex flex-direction-column">
-                  <div class="d-flex flex-column justify-content-center align-items-start">
-                    <p class="text-light mb-0">ALBUM</p>
-                    <div>
-                      <div>
-                        <h1 class="text-light">Gioventù Brucata</h1>
-                      </div>
-                      <div>
-                        <p class="text-light mb-0">
-                          <img
-                            class="pinguiniTattici"
-                            aria-hidden="false"
-                            draggable="false"
-                            loading="eager"
-                            src="https://i.scdn.co/image/ab6761610000f1783b96cd66c6bf065f7b773a33"
-                            alt="Pinguini Tattici Nucleari"
-                            sizes="(min-width 10px) 20px, 20px"
-                          /><span class="text-white ms-2">Pinguini Tattici Nucleari • 2017 • 12 brani, <span class="durata">53 min 20 sec. </span> </span>
-                        </p>
-                      </div>
-                    </div>
+        <div class="col-7 center px-0">
+          <div data-bs-spy="scroll" data-bs-offset="0" class="scrollspy-example text-secondary" tabindex="0" style="height: 100vh; overflow-y: auto; overflow-x: hidden;">
+            <main class="h-100 w-100">
+              <div class="album pt-2">
+                <nav class="d-flex justify-content-between">
+                  <div>
+                    <button type="button" class="btn bg-black rounded-circle ps-2"><i class="bi bi-chevron-left text-white"></i></button>
+                    <button type="button" class="btn bg-black rounded-circle ps-2"><i class="bi bi-chevron-right text-white"></i></button>
+                  </div>
+                  <div class="btn-group bg-black">
+                    <button type="button" class="btn btn-black text-white" style="font-size: 0.7rem">
+                      <img
+                        src="/assets/imgs/main/image-6.jpg"
+                        class="object-fit-cover me-1"
+                        alt=""
+                        width="20px"
+                        height="20px"
+                        style="border-radius: 50%"
+                      />Lidia Nautilus...
+                    </button>
+                    <button
+                      type="button"
+                      class="btn btn-black dropdown-toggle dropdown-toggle-split rounded-start"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                    >
+                      <span class="visually-hidden">Toggle Dropdown</span>
+                    </button>
+                  </div>
+                </nav>
+                <div class="d-flex">
+                  <div class="row ps-4">
+                    <p class="m-0 pt-5 mt-5 text-white fw-light fs-6"><i class="bi bi-patch-check-fill pe-2 text-primary"></i>Artista Verificato</p>
+                    <h1 class="text-white display-1 fw-bold titolo">Yellowcard</h1>
+                    <p class="fw-bold">3.446.783 ascoltatori mensili</p>
                   </div>
                 </div>
               </div>
-            </div>
-          </main>
+              <div class="d-flex align-items-center ps-4 pt-2">
+                <button class="btn spotify bg-transparent fs-1">
+                  <i class="bi bi-play-circle-fill"></i>
+                </button>
+                <button type="button" class="btn d btn-outline-light px-3 py-1 ms-3 fs-6">FOLLOWING</button>
+                <i class="bi bi-three-dots ps-3 fs-2"></i>
+              </div>
+              <div class="d-flex justify-content-between">
+                <div class="align-items-center ps-4 pt-2 justify-content-between">
+                  <h4 class="text-white fw-bold pb-4 fs-5">Popolari</h4>
+                  <div class="row pb-3">
+                    <div>
+                      <div class="col d-flex align-items-center justify-content-between ps-4">
+                        <p class="text-white fw-normal pe-3 pt-3">1</p>
+                        <img width="45px" src="./assets/imgs/main/image-13.jpg" alt="" />
+                        <h6 class="text-white ps-3 fw-normal mb-0">Ocean Avenue</h6>
+                        <div>
+                          <p class="m-0 ps-5">276.458.218</p>
+                        </div>
+                        <div>
+                          <p class="m-0 ms-5 ps-5">3:18</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row pb-3">
+                    <div>
+                      <div class="col d-flex align-items-center justify-content-between ps-4">
+                        <p class="text-white fw-normal pe-3 pt-3">2</p>
+                        <img width="45px" src="./assets/imgs/main/image-13.jpg" alt="" />
+                        <h6 class="text-white ps-3 fw-normal mb-0">Ocean Avenue</h6>
+                        <div>
+                          <p class="m-0 ps-5">276.458.218</p>
+                        </div>
+                        <div>
+                          <p class="m-0 ms-5 ps-5">3:18</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row pb-3">
+                    <div>
+                      <div class="col d-flex align-items-center justify-content-between ps-4">
+                        <p class="text-white fw-normal pe-3 pt-3">3</p>
+                        <img width="45px" src="./assets/imgs/main/image-13.jpg" alt="" />
+                        <h6 class="text-white ps-3 fw-normal mb-0">Ocean Avenue</h6>
+                        <div>
+                          <p class="m-0 ps-5">276.458.218</p>
+                        </div>
+                        <div>
+                          <p class="m-0 ms-5 ps-5">3:18</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row pb-3">
+                    <div>
+                      <div class="col d-flex align-items-center justify-content-between ps-4">
+                        <p class="text-white fw-normal pe-3 pt-3">4</p>
+                        <img width="45px" src="./assets/imgs/main/image-13.jpg" alt="" />
+                        <h6 class="text-white ps-3 fw-normal mb-0">Ocean Avenue</h6>
+                        <div>
+                          <p class="m-0 ps-5">276.458.218</p>
+                        </div>
+                        <div>
+                          <p class="m-0 ms-5 ps-5">3:18</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row pb-3">
+                    <div>
+                      <div class="col d-flex align-items-center justify-content-between ps-4">
+                        <p class="text-white fw-normal pe-3 pt-3">5</p>
+                        <img width="45px" src="./assets/imgs/main/image-13.jpg" alt="" />
+                        <h6 class="text-white ps-3 fw-normal mb-0">Ocean Avenue</h6>
+                        <div>
+                          <p class="m-0 ps-5">276.458.218</p>
+                        </div>
+                        <div>
+                          <p class="m-0 ms-5 ps-5">3:18</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row pb-3">
+                    <div>
+                      <div class="col d-flex align-items-center justify-content-between ps-4">
+                        <p class="text-white fw-normal pe-3 pt-3">4</p>
+                        <img width="45px" src="./assets/imgs/main/image-13.jpg" alt="" />
+                        <h6 class="text-white ps-3 fw-normal mb-0">Ocean Avenue</h6>
+                        <div>
+                          <p class="m-0 ps-5">276.458.218</p>
+                        </div>
+                        <div>
+                          <p class="m-0 ms-5 ps-5">3:18</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                <div class="me-5 pe-5">
+                  <h4 class="text-white fw-bold fs-5">Brani che ti piacciono</h4>
+                </div>
+              </div>
+            </main>
+          </div>
         </div>
+        <!-- sidebar -->
         <div class="col-2 bg-black px-2 py-2">
           <div class="row">
             <div class="col-12 d-flex align-items-center justify-content-between h-auto w-100 mt-4">
@@ -211,7 +289,7 @@
     </div>
 
     <!-- il footer inizia qui -->
-    <footer class="container-fluid fixed-bottom py-2">
+    <footer class="container-fluid fixed-bottom py-2 mt-6">
       <div class="row align-items-center">
         <!-- info canzone sezione -->
         <div class="col-3 d-flex align-items-center">
