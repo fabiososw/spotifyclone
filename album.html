@@ -20,10 +20,10 @@
         <div class="col-12 col-md-3 d-none d-md-block bg-black align-items-center justify-content-center ps-2">
           <div class="row ps-2 py-2 gy-2 mb-3">
             <div class="col-12">
-                <a href="homepage.html">
+              <a href="homepage.html">
                 <i class="bi bi-three-dots rounded-50"></i>
-              </div>
-           </a>
+              </a>
+            </div>
             <div class="col-12">
               <i class="bi bi-house-door me-2"></i>
               <a href="#" class="text-decoration-none">Home</a>
@@ -93,13 +93,15 @@
           <main class="h-100 w-100">
             <div class="album">
               <nav class="d-flex justify-content-between pt-2 px-3">
-                <div>
+                <div class="d-none d-md-block">
+                  <!-- Nasconde la navbar sui dispositivi più piccoli -->
                   <a href="homepage.html">
                     <button type="button" class="navBtn btn rounded-circle p-1 me-2"><i class="bi bi-chevron-left text-white"></i></button>
                     <button type="button" class="navBtn btn rounded-circle p-1"><i class="bi bi-chevron-right text-white"></i></button>
                   </a>
                 </div>
-                <div class="navBtn1 btn-group rounded-pill">
+                <div class="navBtn1 btn-group rounded-pill d-none d-md-flex">
+                  <!-- Nasconde anche questa parte sui dispositivi più piccoli -->
                   <img
                     src="/assets/imgs/main/image-6.jpg"
                     class="object-fit-cover"
@@ -119,86 +121,61 @@
                   </button>
                 </div>
               </nav>
-              <div class="d-flex">
-                <div class="d-flex flex-column justify-content-end m-4">
-                  <img
-                    id="album-img"
-                    class="custom-shadow"
-                    width="180px"
-                    height="180px"
-                  />
+
+              <div class="d-flex flex-column flex-md-row px-3">
+                <div class="col-12 col-md-6 d-flex flex-column justify-content-end m-4" style="width: 180px; height: 180px">
+                  <img id="album-img" class="custom-shadow" width="180px" height="180px" />
                 </div>
-                <div class="d-flex flex-direction-column">
-                  <div class="d-flex flex-column justify-content-center align-items-start">
-                    <div>
-                      <p class="text-light mb-0 fw-semibold" style="font-size: 0.5rem">ALBUM</p>
-                    </div>
-                    <div>
-                      <div>
-                        <h1 id="album-title" class="text-light fw-bold">Gioventù Brucata</h1>
-                      </div>
-                      <div>
-                        <p class="text-light mb-0">
-                          <img
-                            id="artist-img"
-                            class="pinguiniTattici"
-                            aria-hidden="false"
-                            draggable="false"
-                            loading="eager"
-                            src="https://i.scdn.co/image/ab6761610000f1783b96cd66c6bf065f7b773a33"
-                            alt="Pinguini Tattici Nucleari"
-                            sizes="(min-width 10px) 20px, 20px"
-                          /><span id="artist-name" class="text-white ms-2"><span class="durata">53 min 20 sec. </span> </span>
-                        </p>
-                      </div>
-                    </div>
-                  </div>
+                <div class="col-12 col-md-6 d-flex flex-column justify-content-center align-items-start ms-3 ms-md-2">
+                  <p class="text-light mb-0 fw-semibold" style="font-size: 0.5rem">ALBUM</p>
+                  <h1 id="album-title" class="text-light fw-bold">Gioventù Brucata</h1>
+                  <p class="text-light mb-0">
+                    <img
+                      id="artist-img"
+                      class="pinguiniTattici"
+                      aria-hidden="false"
+                      draggable="false"
+                      loading="eager"
+                      src="https://i.scdn.co/image/ab6761610000f1783b96cd66c6bf065f7b773a33"
+                      alt="Pinguini Tattici Nucleari"
+                      sizes="(min-width 10px) 20px, 20px"
+                    />
+                    <span id="artist-name" class="text-white ms-2"><span class="durata">53 min 20 sec. </span> </span>
+                  </p>
                 </div>
               </div>
             </div>
+
             <div class="songs d-flex px-3 overflow-y-auto" style="height: 100vh; overflow-x: hidden">
               <div class="container">
                 <div class="d-flex align-items-center">
-                  <div class="me-2">
-                    <button class="btnPlay btn bg-transparent p-0 fs-1">
-                      <i class="bi bi-play-circle-fill"></i>
-                    </button>
-                  </div>
-                  <div>
-                    <button class="btn bg-transparent">
-                      <i class="bi bi-heart text-white"></i>
-                    </button>
-                  </div>
-                  <div class="text-white">
-                    <svg data-encore-id="icon" role="img" aria-hidden="true" viewBox="0 0 16 16" style="height: 20px; width: 20px">
-                      <path
-                        fill="currentColor"
-                        d="M4.995 8.745a.75.75 0 0 1 1.06 0L7.25 9.939V4a.75.75 0 0 1 1.5 0v5.94l1.195-1.195a.75.75 0 1 1 1.06 1.06L8 12.811l-.528-.528a.945.945 0 0 1-.005-.005L4.995 9.805a.75.75 0 0 1 0-1.06z"
-                      ></path>
-                      <path fill="currentColor" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13z"></path>
-                    </svg>
-                  </div>
+                  <button class="btnPlay btn bg-transparent p-0 fs-1">
+                    <i class="bi bi-play-circle-fill"></i>
+                  </button>
+                  <button class="btn bg-transparent">
+                    <i class="bi bi-heart text-white"></i>
+                  </button>
+                  <svg data-encore-id="icon" role="img" aria-hidden="true" viewBox="0 0 16 16" style="height: 20px; width: 20px">
+                    <path
+                      fill="currentColor"
+                      d="M4.995 8.745a.75.75 0 0 1 1.06 0L7.25 9.939V4a.75.75 0 0 1 1.5 0v5.94l1.195-1.195a.75.75 0 1 1 1.06 1.06L8 12.811l-.528-.528a.945.945 0 0 1-.005-.005L4.995 9.805a.75.75 0 0 1 0-1.06z"
+                    ></path>
+                    <path fill="currentColor" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13z"></path>
+                  </svg>
                   <div class="col-12 text-light ms-2">
                     <i class="bi bi-three-dots rounded-50"></i>
                   </div>
                 </div>
 
-                <!------------------------------------------------->
-
                 <div class="d-flex justify-content-between border-bottom border-1" style="font-size: 0.8rem">
-                  <div>
-                    <p class="ps-2"># TITOLO</p>
-                  </div>
-                  <div>
-                    <p>RIPRODUZIONI</p>
-                  </div>
-
-                  <div><i class="bi bi-clock text-light pe-2"></i></div>
+                  <p class="ps-2"># TITOLO</p>
+                  <p>RIPRODUZIONI</p>
+                  <i class="bi bi-clock text-light pe-2"></i>
                 </div>
 
-                <div id="tracklist">
-                </div>
-                  
+                <div id="tracklist"></div>
+              </div>
+            </div>
           </main>
         </div>
         <div class="col-12 col-md-2 d-none d-md-block bg-black px-2 py-2">
