@@ -4,6 +4,7 @@ body {
   padding: 0;
   height: 100%;
   overflow-x: hidden; /* Rimuove la scrollbar orizzontale */
+  overflow-y: hidden; /* Rimuove la scrollbar orizzontale */
 }
 
 /* colore tutti gli elementi*/
@@ -103,4 +104,15 @@ footer {
 
 .player svg:hover {
   color: white;
+}
+footer {
+  position: fixed; /* Fissa il footer in basso */
+  bottom: 0;
+  left: 0;
+  width: 100%; /* Occupa tutta la larghezza */
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  z-index: 1000; /* Garantisce che il footer sia in cima agli altri elementi */
 }
