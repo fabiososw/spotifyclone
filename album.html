@@ -92,7 +92,7 @@
         <div class="col-12 col-md-7 center p-0">
           <main class="h-100 w-100">
             <div class="album">
-              <nav class="d-flex justify-content-between pt-2 px-3">
+              <nav class="d-flex justify-content-between pt-2 px-3 d-none d-md-flex">
                 <div>
                   <a href="homepage.html">
                     <button type="button" class="navBtn btn rounded-circle p-1 me-2"><i class="bi bi-chevron-left text-white"></i></button>
@@ -121,10 +121,10 @@
               </nav>
 
               <div class="d-flex flex-column flex-md-row px-3">
-                <div class="col-12 col-md-6 d-flex flex-column justify-content-end m-4" style="width: 180px; height: 180px">
+                <div class="col-12 col-md-6 d-flex flex-column justify-content-end m-4 d-block mx-auto mx-sm-0" style="width: 180px; height: 180px">
                   <img id="album-img" class="custom-shadow" width="180px" height="180px" />
                 </div>
-                <div class="col-12 col-md-6 d-flex flex-column justify-content-center align-items-start">
+                <div class="col-12 col-md-6 d-flex flex-column justify-content-center align-items-start ms-3">
                   <p class="text-light mb-0 fw-semibold" style="font-size: 0.5rem">ALBUM</p>
                   <h1 id="album-title" class="text-light fw-bold">Gioventù Brucata</h1>
                   <p class="text-light mb-0">
@@ -153,19 +153,21 @@
                   <button class="btn bg-transparent">
                     <i class="bi bi-heart text-white"></i>
                   </button>
-                  <svg data-encore-id="icon" role="img" aria-hidden="true" viewBox="0 0 16 16" style="height: 20px; width: 20px">
-                    <path
-                      fill="currentColor"
-                      d="M4.995 8.745a.75.75 0 0 1 1.06 0L7.25 9.939V4a.75.75 0 0 1 1.5 0v5.94l1.195-1.195a.75.75 0 1 1 1.06 1.06L8 12.811l-.528-.528a.945.945 0 0 1-.005-.005L4.995 9.805a.75.75 0 0 1 0-1.06z"
-                    ></path>
-                    <path fill="currentColor" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13z"></path>
-                  </svg>
+                  <button class="btn bg-transparent">
+                    <svg data-encore-id="icon" role="img" aria-hidden="true" viewBox="0 0 16 16" class="icon1 text-white" style="width: 20px; height: 20px">
+                      <path
+                        fill="white"
+                        d="M4.995 8.745a.75.75 0 0 1 1.06 0L7.25 9.939V4a.75.75 0 0 1 1.5 0v5.94l1.195-1.195a.75.75 0 1 1 1.06 1.06L8 12.811l-.528-.528a.945.945 0 0 1-.005-.005L4.995 9.805a.75.75 0 0 1 0-1.06z"
+                      ></path>
+                      <path fill="white" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13z"></path>
+                    </svg>
+                  </button>
                   <div class="col-12 text-light ms-2">
                     <i class="bi bi-three-dots rounded-50"></i>
                   </div>
                 </div>
 
-                <div class="d-flex justify-content-between border-bottom border-1" style="font-size: 0.8rem">
+                <div class="d-flex justify-content-between border-bottom border-1 d-none d-sm-flex" style="font-size: 0.8rem">
                   <p class="ps-2"># TITOLO</p>
                   <p>RIPRODUZIONI</p>
                   <i class="bi bi-clock text-light pe-2"></i>
@@ -232,7 +234,7 @@
     </div>
 
     <!-- il footer inizia qui -->
-    <footer class="container-fluid fixed-bottom py-2">
+    <footer class="container-fluid fixed-bottom py-2 d-none d-sm-block">
       <div class="row align-items-center">
         <!-- info canzone sezione -->
         <div class="col-3 d-flex align-items-center">
@@ -333,6 +335,38 @@
                 d="M6.53 9.47a.75.75 0 0 1 0 1.06l-2.72 2.72h1.018a.75.75 0 0 1 0 1.5H1.25v-3.579a.75.75 0 0 1 1.5 0v1.018l2.72-2.72a.75.75 0 0 1 1.06 0zm2.94-2.94a.75.75 0 0 1 0-1.06l2.72-2.72h-1.018a.75.75 0 1 1 0-1.5h3.578v3.579a.75.75 0 0 1-1.5 0V3.81l-2.72 2.72a.75.75 0 0 1-1.06 0z"
               ></path>
             </svg>
+          </button>
+        </div>
+      </div>
+    </footer>
+
+    <footer class="responsiveFooter container-fluid fixed-bottom d-block d-sm-none bg-black p-0 m-0">
+      <div class="d-flex justify-content-around bg-black">
+        <div>
+          <button class="btn bg-transparent">
+            <i class="bi bi-house-door-fill text-white" id="home" style="height: 30px; width: 30px"></i>
+            <br />
+            <p class="text-white">Home</p>
+          </button>
+        </div>
+        <div>
+          <button class="btn bg-transparent">
+            <i class="bi bi-search text-light" id="search" style="height: 30px; width: 30px"> </i>
+            <br />
+            <p class="text-white">Cerca</p>
+          </button>
+        </div>
+        <div>
+          <button class="btn bg-transparent">
+            <div>
+              <svg data-encore-id="icon" role="img" aria-hidden="true" viewBox="0 0 24 24" class="icon1">
+                <path
+                  fill="white"
+                  d="M14.5 2.134a1 1 0 0 1 1 0l6 3.464a1 1 0 0 1 .5.866V21a1 1 0 0 1-1 1h-6a1 1 0 0 1-1-1V3a1 1 0 0 1 .5-.866zM16 4.732V20h4V7.041l-4-2.309zM3 22a1 1 0 0 1-1-1V3a1 1 0 0 1 2 0v18a1 1 0 0 1-1 1zm6 0a1 1 0 0 1-1-1V3a1 1 0 0 1 2 0v18a1 1 0 0 1-1 1z"
+                ></path>
+              </svg>
+            </div>
+            <p class="text-white">Libreria</p>
           </button>
         </div>
       </div>

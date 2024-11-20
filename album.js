@@ -53,11 +53,16 @@ fetch(`https://striveschool-api.herokuapp.com/api/deezer/album/${albumId}`)
               <span class="sottotitolo">${track.artist.name}</span>
             </div>
           </div>
-          <div>
+          <div class="d-none d-sm-flex">
             <p class="ascolti">${track.rank || "N/A"}</p>
           </div>
-          <div>
+          <div class="d-none d-sm-flex">
             <p class="durata">${formatDuration(track.duration)}</p>
+          </div>
+          <div class="d-flex d-sm-none">
+            <p>
+              <i class="bi bi-three-dots-vertical text-white"></i>
+            </p>
           </div>
         `;
 
