@@ -127,3 +127,8 @@ footer {
 .spotify {
   color: #1db954;
 }
+
+.songs {
+  background: rgb(10, 10, 10);
+  background: linear-gradient(0deg, rgb(10, 10, 9) 0%, rgb(24, 24, 23) 100%);
+}
