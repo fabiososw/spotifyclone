@@ -183,3 +183,26 @@ footer {
   transform: scale(1.1);
   transition: transform 0.2s ease;
 }
+
+.textMovement {
+  display: inline-block;
+  white-space: nowrap;
+  animation: scroll-left 10s linear infinite;
+}
+@keyframes scroll-left {
+  0% {
+    transform: translateX(100%); /* Inizia fuori dal lato destro del contenitore */
+  }
+  100% {
+    transform: translateX(-100%); /* Termina fuori dal lato sinistro del contenitore */
+  }
+}
+
+.songs {
+  margin-bottom: 96px;
+}
+@media (max-width: 768px) {
+  .songs {
+    margin-bottom: 118px;
+  }
+}

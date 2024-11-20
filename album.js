@@ -42,7 +42,7 @@ fetch(`https://striveschool-api.herokuapp.com/api/deezer/album/${albumId}`)
     // cicliamo i brani e li aggiungiamo al DOM
     tracks.forEach((track, index) => {
       const trackDiv = document.createElement("div");
-      trackDiv.classList.add("d-flex", "mt-3", "tracklist");
+      trackDiv.classList.add("d-flex", "mt-3", "tracklist", "justify-content-between");
 
       trackDiv.innerHTML = `
       
@@ -68,6 +68,12 @@ fetch(`https://striveschool-api.herokuapp.com/api/deezer/album/${albumId}`)
         `;
 
       tracklistContainer.appendChild(trackDiv); // aggiungi il brano al container
+      trackDiv.addEventListener("click", () => {
+        const songTitle = document.getElementById("songTitle");
+        const imgIcon = document.getElementById("imgIcon");
+
+        songTitle.innerText = `${track.title}, ${track.artist.name}`;
+      });
     });
   })
   .catch((error) => {
