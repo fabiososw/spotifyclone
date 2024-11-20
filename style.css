@@ -161,3 +161,25 @@ footer {
 .responsiveFooter {
   background-color: #000;
 }
+
+.btnPlay:hover {
+  color: #1db954;
+  transform: scale(1.1);
+  transition: transform 0.2s ease;
+}
+
+/*.heart:hover {
+  transform: scale(1.1);
+  transition: transform 0.2s ease;
+  background: white;
+}*/
+
+.heart .bi-heart,
+.heart .bi-heart-fill {
+  transition: color 0.3s ease; /* Transizione per il colore */
+}
+
+.btnHover:hover {
+  transform: scale(1.1);
+  transition: transform 0.2s ease;
+}

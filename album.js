@@ -71,3 +71,15 @@ fetch(`https://striveschool-api.herokuapp.com/api/deezer/album/${albumId}`)
   .catch((error) => {
     console.error("Errore nel recuperare i dettagli dell'album:", error); // errore se qualcosa va storto
   });
+
+//funzione per icona cuore che si riempe al click
+document.querySelector(".heart").addEventListener("click", function () {
+  const icon = this.querySelector("i");
+  if (icon.classList.contains("bi-heart")) {
+    icon.classList.remove("bi-heart");
+    icon.classList.add("bi-heart-fill");
+  } else {
+    icon.classList.remove("bi-heart-fill");
+    icon.classList.add("bi-heart");
+  }
+});
