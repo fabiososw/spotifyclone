@@ -15,16 +15,19 @@ let arrayDiv = Array.from(divProva)
   '#FF3380', '#CCCC00', '#66E64D', '#4D80CC', '#9900B3', 
   '#E64D66', '#4DB380', '#FF4D4D', '#99E6E6', '#6666FF'];
 
- const randomI = Math.floor(Math.random() * colorArray.length)
- const randomColor = colorArray[randomI]
- const randomDIvI = Math.floor(Math.random() *arrayDiv.length)
- let randomDivElement = []
-randomDivElement = arrayDiv[randomDIvI]
- 
 
- arrayDiv.forEach(element => element.style.backgroundColor = randomColor)
-   
- 
+ for(let i = 0; i<22; i++){
+  const randomColorI = Math.floor(Math.random() * 50 )
+  let randomColor = colorArray[randomColorI]
+  const randomDIvI = Math.floor(Math.random() *arrayDiv.length) 
+  arrayDiv[randomDIvI].style.backgroundColor = randomColor
+  if(arrayDiv[randomDIvI].style.backgroundColor = " "){
+    arrayDiv[i].style.backgroundColor = randomColor
+  }
+
+}
+//arrayDiv.forEach(element => element.style.backgroundColor = randomColor)}
+
  
 
    
