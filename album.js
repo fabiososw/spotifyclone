@@ -45,13 +45,15 @@ fetch(`https://striveschool-api.herokuapp.com/api/deezer/album/${albumId}`)
       trackDiv.classList.add("d-flex", "justify-content-between", "mt-3", "tracklist");
 
       trackDiv.innerHTML = `
+      <button class="singleSong btn bg-transparent">
           <div class="d-flex align-items-center">
             <span class="me-3">${index + 1}</span>
             <div>
-              <span class="text-white">${track.title}</span> <br />
-              <span class="sottotitolo">${track.artist.name}</span>
+              <span class="text-white d-flex align-items-start">${track.title}</span> 
+              <span class="sottotitolo d-flex align-items-start">${track.artist.name}</span>
             </div>
           </div>
+          </button>
           <div class="d-none d-sm-flex">
             <p class="ascolti">${track.rank || "N/A"}</p>
           </div>
