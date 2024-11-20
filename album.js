@@ -42,10 +42,10 @@ fetch(`https://striveschool-api.herokuapp.com/api/deezer/album/${albumId}`)
     // cicliamo i brani e li aggiungiamo al DOM
     tracks.forEach((track, index) => {
       const trackDiv = document.createElement("div");
-      trackDiv.classList.add("d-flex", "justify-content-between", "mt-3", "tracklist");
+      trackDiv.classList.add("d-flex", "mt-3", "tracklist");
 
       trackDiv.innerHTML = `
-      <button class="singleSong btn bg-transparent">
+      
           <div class="d-flex align-items-center">
             <span class="me-3">${index + 1}</span>
             <div>
@@ -53,8 +53,8 @@ fetch(`https://striveschool-api.herokuapp.com/api/deezer/album/${albumId}`)
               <span class="sottotitolo d-flex align-items-start">${track.artist.name}</span>
             </div>
           </div>
-          </button>
-          <div class="d-none d-sm-flex">
+        
+          <div class="d-none d-sm-flex justify-content-end ms-auto" style="margin-right: 40%;">
             <p class="ascolti">${track.rank || "N/A"}</p>
           </div>
           <div class="d-none d-sm-flex">
