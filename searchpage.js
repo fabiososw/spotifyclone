@@ -16,7 +16,7 @@ let arrayDiv = Array.from(divProva)
   '#E64D66', '#4DB380', '#FF4D4D', '#99E6E6', '#6666FF'];
 
 
- for(let i = 0; i<22; i++){
+ for(let i = 0; i<arrayDiv.length; i++){
   const randomColorI = Math.floor(Math.random() * 50 )
   let randomColor = colorArray[randomColorI]
   const randomDIvI = Math.floor(Math.random() *arrayDiv.length) 
@@ -28,7 +28,13 @@ let arrayDiv = Array.from(divProva)
 }
 //arrayDiv.forEach(element => element.style.backgroundColor = randomColor)}
 
- 
+document.getElementsByTagName('form')[0].addEventListener("DOMContentLoaded", (e)=>{
+  e.preventDefault();
+})
 
-   
 
+/*if(document.getElementById('input').value != 0){
+  document.getElementById('searchBtn').addEventListener('click', () =>{
+    document.querySelector('main').innerHTML = ''
+  })
+}*/

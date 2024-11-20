@@ -17,35 +17,36 @@
     #Recenti:hover{color: white; font-size: 1.1rem;}
     #playlistAside:hover{background-color: #212529; transform: scaleX(1.05)}
     #playlistMain:hover{transform: scale(1.05)}
+    ::-webkit-scrollbar {width: 6px;}
   </style>
   <body class="h-100 w-100" style="overflow: hidden;">
-    <nav class="container-fluid d-lg-flex  d-block bg-black fixed-top-lg" style="height: 70px;" id="nav" >
+    <nav class="container-fluid d-lg-flex vertical-align-middle d-block bg-black fixed-top-lg" style="height: 70px;" id="nav" >
       <div class="row ps-2 py-2  w-100 ">
-        <div class="col-3 col-xxl-4 d-none d-lg-flex d-flex align-items-center me-0" style="width: 10%;">
+        <div class="col-12 col-lg-3 col-xxl-4 d-none d-lg-flex d-flex align-items-center me-0" style="width: 10%;">
           <i class="bi bi-three-dots rounded-50" style="font-size: 2rem;"></i>
           <button type="button" class="btn bg-black rounded-circle px-2"><i class="bi bi-chevron-left text-secondary" style="font-size: 2rem;"></i></button>
           <button type="button" class="btn bg-black rounded-circle px-2"><i class="bi bi-chevron-right text-secondary" style="font-size: 2rem;"></i></button>
         </div>   
-        <div class="col-6 col-xxl-4 d-flex align-middle">
+        <div class="col-12 col-lg-3 col-xxl-4 d-flex align-middle p-0 ms-2">
           <div class="d-none d-lg-flex">
             <button type="button" id="houseBtn" class="rounded-circle bg-dark px-2 me-3 mt-2"><i class="text-white bi bi-house-door" style="font-size: 30px;"></i></button>
           </div> 
-          <form class="d-flex  align-items-center" style="width: 60%;">
-              <input type="text" class="bg-dark text-white px-3 border-0 rounded-pill h-100  w-100" placeholder="Cosa vuoi ascoltare?">
-              <button type="button" class="rounded-circle border-0 bg-transparent"><i class="text-white bi bi-search" style="font-size: 1.3rem;"></i></button>
+          <form class="d-flex align-items-center" style="width: 70%;">
+              <input type="text" class="bg-dark text-white border-0 px-3 border-0 rounded-pill w-100" placeholder="Cosa vuoi ascoltare?" id="input" style="height: 90%;">
+              <button type="button" class="rounded-circle border-0 bg-transparent" id="searchBtn"><i class="text-white bi bi-search" style="font-size: 1.3rem;"></i></button>
               <i class="bi bi-filter-square text-white-subtle" style="font-size: 1.3rem;"></i>
           </form>    
         </div>  
-        <div class="col-3 col-xxl-4" style="margin-left: 150px;">
+        <div class="col-12 col-lg-3 col-xxl-4" style="margin-left: auto;">
           <div class="d-flex align-items-center justify-content-end">
             <i class="bi bi-bell text-white-subtle bg-transparent rounded-circle me-1 px-3 py-2 d-none d-lg-inline" style="font-size: 1.9rem;"></i>
             <i class="bi bi-people-fill text-white-subtle bg-transparent rounded-circle me-3 px-3 py-2 d-none d-lg-inline" style="font-size: 1.9rem;"></i>
-            <button type="button" class="bg-dark rounded-circle py-2 px-2 d-block d-lg-flex"><img src="/assets/imgs/main/image-11.jpg" class="rounded-circle" width="40px" height="40px" alt=""></button>
+            <button type="button" class="bg-dark rounded-circle py-2 px-2 d-none d-lg-flex"><img src="/assets/imgs/main/image-11.jpg" class="rounded-circle" width="40px" height="40px" alt=""></button>
           </div>
         </div>
       </div>
     </nav>
-    <div class="container-fluid h-100 p-0" style="overflow-y: hidden;">
+    <div class="container-fluid h-100 p-0" style="overflow-y: hidden;" id="main">
       <div class="row h-100">
         <div class="col-lg-3 d-none d-sm-none d-md-none d-lg-block bg-black align-items-center justify-content-center px-3" style="max-height: 800px; -y: hidden;">
           <div class="row ps-2 pt-2 pb-2 gy-2 ">
@@ -64,11 +65,11 @@
             </div>
           </div>
           <div class="row ps-2 py-2 gy-3" style="max-height: 800px;overflow-y: scroll;">
-            <div class="col-9 d-flex justify-content-between">
-              <div class="col-10">
+            <div class="col-12 d-flex justify-content-between">
+              <div class="col-lg-4 col-xxl-7">
                <i class="text-white-subtle ms-3 bi bi-search"></i>
               </div>
-              <div class="col-3 d-flex">
+              <div class="col-lg-6s col-xxl-5 d-flex w-100">
                <p id="Recenti" class="text-white-subtle" style="margin-left: 80px;">Recenti</p>
                <i id="Recenti" class="pe-2 ms-2 text-white-subtle bi bi-list"></i>
               </div>
@@ -236,7 +237,7 @@
                 <div class="col-12 col-md-6 col-lg-4 col-xxl-3 rounded-3 " style="height:200px;  overflow: hidden;" id="playlistMain">
                   <div class="position-relative w-100 h-100 overflow-hidden js-fillcolor" id="divBg">
                     <h2 class="text-white pt-3 ps-3  mb-0">Musica</h2>
-                    <img src="./assets/imgs/main/image-10.jpg" class="rounded-2" id="mainImage" style="height: 70%; transform: rotate(30deg) translateY(10px); position: absolute; bottom: 0; left: 60%; box-shadow: 0 0 1em grey;">  
+                    <img src="./assets/imgs/main/image-10.jpg" class="rounded-2" id="mainImage" style="height: 70%; transform: rotate(30deg) translateY(10px); position: absolute; bottom: 0; left: 70%; box-shadow: 0 0 1em grey;">  
                   </div>
                 </div>
                 <div class="col-12 col-md-6 col-lg-4 col-xxl-3 rounded-3 " style="height:200px;  overflow: hidden;" id="playlistMain">
