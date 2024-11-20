@@ -45,20 +45,25 @@ fetch(`https://striveschool-api.herokuapp.com/api/deezer/album/${albumId}`)
       trackDiv.classList.add("d-flex", "justify-content-between", "mt-3", "tracklist");
 
       trackDiv.innerHTML = `
-        <div class="d-flex align-items-center">
-          <span class="me-3">${index + 1}</span>
-          <div>
-            <span class="text-white">${track.title}</span> <br />
-            <span class="sottotitolo">${track.artist.name}</span>
+          <div class="d-flex align-items-center">
+            <span class="me-3">${index + 1}</span>
+            <div>
+              <span class="text-white">${track.title}</span> <br />
+              <span class="sottotitolo">${track.artist.name}</span>
+            </div>
           </div>
-        </div>
-        <div>
-          <p class="ascolti">${track.rank || "N/A"}</p>
-        </div>
-        <div>
-          <p class="durata">${formatDuration(track.duration)}</p>
-        </div>
-      `;
+          <div class="d-none d-sm-flex">
+            <p class="ascolti">${track.rank || "N/A"}</p>
+          </div>
+          <div class="d-none d-sm-flex">
+            <p class="durata">${formatDuration(track.duration)}</p>
+          </div>
+          <div class="d-flex d-sm-none">
+            <p>
+              <i class="bi bi-three-dots-vertical text-white"></i>
+            </p>
+          </div>
+        `;
 
       tracklistContainer.appendChild(trackDiv); // aggiungi il brano al container
     });
