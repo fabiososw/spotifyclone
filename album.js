@@ -71,8 +71,14 @@ fetch(`https://striveschool-api.herokuapp.com/api/deezer/album/${albumId}`)
       trackDiv.addEventListener("click", () => {
         const songTitle = document.getElementById("songTitle");
         const imgIcon = document.getElementById("imgIcon");
+        const songTitle2 = document.getElementById("songTitle2");
+        const artistName1 = document.getElementById("artistName1");
+        const albumCover = document.getElementById("albumCover");
 
         songTitle.innerText = `${track.title}, ${track.artist.name}`;
+        songTitle2.innerText = `${track.title}`;
+        artistName1.innerText = `${track.artist.name}`;
+        albumCover.innerText = `${albumImg}`;
       });
     });
   })
