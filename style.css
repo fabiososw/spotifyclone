@@ -133,10 +133,9 @@ footer {
     background: linear-gradient(0deg, rgb(22, 22, 22) 0%, rgb(51, 51, 51) 100%);
   }
 }
-@media (min-width: 577px) {
-  .album {
-    background-image: url(https://wallpapercat.com/w/full/5/e/f/2359228-2048x1536-desktop-hd-yellowcard-band-background-image.jpg);
-  }
+.album {
+  background: rgb(38, 38, 38);
+  background: linear-gradient(0deg, rgb(22, 22, 22) 0%, rgb(51, 51, 51) 100%);
 }
 .durata {
   color: #b3b3b3 !important;
@@ -205,4 +204,24 @@ footer {
   .songs {
     margin-bottom: 118px;
   }
+}
+
+button:has(i),
+button:has(svg) {
+  outline: transparent !important;
+  box-shadow: 0 0 0 transparent !important;
+  border: transparent !important;
+}
+
+button:has(i):focus,
+button:has(svg):focus,
+button:has(i):active,
+button:has(svg):active {
+  outline: transparent !important;
+  box-shadow: 0 0 0 transparent !important;
+  border: transparent !important;
+}
+
+.cursor-pointer {
+  cursor: pointer;
 }

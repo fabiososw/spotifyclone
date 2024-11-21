@@ -1,86 +1,107 @@
-// prendi i parametri dall'url
+const lastSeenTime = document.querySelectorAll(".lastSeen");
+
+lastSeenTime.forEach((timeSeen) => {
+  let randomChoice = Math.random(); // scegliamo un numero random
+  let lastTimeSeen; // variabile per il tempo
+
+  if (randomChoice < 0.5) {
+    lastTimeSeen = Math.floor(Math.random() * 61); // se è sotto 0.5, mettiamo minuti
+    timeSeen.innerText = lastTimeSeen + " minuti"; // tempo in minuti
+  } else {
+    lastTimeSeen = Math.floor(Math.random() * 13 + 1); // altrimenti ore
+    timeSeen.innerText = lastTimeSeen + " ore"; // tempo in ore
+  }
+});
+// prendi l'id dell'artista dall'url
 const urlParams = new URLSearchParams(window.location.search);
-const artistNewId = urlParams.get("id"); // prendi l'ID dell'artista
-const artistBigImg = document.querySelector(".album img"); // immagine grande dell'artista
-const artistNewName = document.querySelector(".titolo"); // nome dell'artista
-const artistListeners = document.querySelector(".ascoltatori"); // numero ascoltatori
+const artistNewId = urlParams.get("id");
 
-// funzione per recuperare i dettagli dell'artista
-function getArtistDetails(artistNewId) {
-  const artistUrl = `https://api.deezer.com/artist/${artistNewId}`; // URL per i dettagli dell'artista
+// prendi gli elementi da aggiornare
+const artistBigImg = document.querySelector(".album");
+const artistNewName = document.querySelector(".titolo");
+const artistListeners = document.querySelector(".ascoltatori");
+const artistaLiked = document.querySelector(".artistaLiked");
+const artistLogo = document.getElementById("artist-img");
 
-  fetch(artistUrl)
+// configurazione api
+const API_KEY = "2b8107ec5amsh419b2e6df1cbbc4p164c14jsn8671d66a70cf"; // chiave rapidapi
+const API_HOST = "deezerdevs-deezer.p.rapidapi.com";
+const BASE_URL = `https://${API_HOST}`;
+
+const artistImg = document.getElementById("artist-img");
+
+// funzione per ottenere i dettagli dell'artista
+function getArtistDetails(artistId) {
+  fetch(`${BASE_URL}/artist/${artistId}`, {
+    method: "GET",
+    headers: {
+      "x-rapidapi-key": API_KEY,
+      "x-rapidapi-host": API_HOST
+    }
+  })
     .then((response) => {
-      if (!response.ok) {
-        throw new Error("Errore nel recuperare i dettagli dell'artista"); // errore se qualcosa va storto
-      }
-      return response.json(); // restituisci i dati come json
+      if (!response.ok) throw new Error("errore nel recuperare i dettagli dell'artista");
+      return response.json();
     })
     .then((data) => {
-      // aggiorna i dettagli dell'artista nella pagina
-      if (artistBigImg) {
-        artistBigImg.src = data.picture_big; // imposta l'immagine dell'artista
-      }
-      if (artistNewName) {
-        artistNewName.innerText = data.name; // imposta il nome dell'artista
-      }
-      if (artistListeners) {
-        artistListeners.innerText = `${data.nb_fan} ascoltatori mensili`; // imposta il numero di ascoltatori mensili
-      }
+      if (data) {
+        // aggiorna immagine, nome, e ascoltatori mensili
+        if (artistBigImg) artistBigImg.style.backgroundImage = `url(${data.picture_big})`;
+        if (artistNewName) artistNewName.innerText = data.name;
+        if (artistListeners) artistListeners.innerText = `${data.nb_fan} ascoltatori mensili`;
+        if (artistaLiked) artistaLiked.innerText = `Di ${data.name}`;
+        if (artistImg) artistImg.src = `${data.picture}`;
 
-      // ora recuperiamo gli album dell'artista
-      const albumsUrl = `https://api.deezer.com/artist/${artistNewId}/albums`;
-      return fetch(albumsUrl); // fetch per gli album
-    })
-    .then((response) => {
-      if (!response.ok) {
-        throw new Error("Errore nel recuperare gli album dell'artista"); // errore nel recupero degli album
+        // chiama la funzione per aggiungere il link all'artista
+        addArtistLink(data.id, data.name); // passa l'id e il nome dell'artista
+      } else {
+        console.log("Nessun dato trovato");
       }
-      return response.json(); // restituisci i dati come json
-    })
-    .then((data) => {
-      const popularTracksContainer = document.querySelector(".row.ps-4"); // selezioniamo il contenitore dei brani
-      data.data.forEach((album) => {
-        // per ogni album dell'artista
-        const albumUrl = `https://api.deezer.com/album/${album.id}/tracks`; // URL per i brani dell'album
-
-        fetch(albumUrl)
-          .then((response) => {
-            if (!response.ok) {
-              throw new Error("Errore nel recupero dei brani: 404 Not Found"); // errore se non troviamo i brani
-            }
-            return response.json(); // restituisci i brani come json
-          })
-          .then((trackData) => {
-            trackData.data.forEach((track, index) => {
-              // per ogni brano nell'album
-              const trackElement = document.createElement("div"); // creiamo l'elemento per il brano
-              trackElement.classList.add("col", "d-flex", "align-items-center", "justify-content-between", "ps-4"); // aggiungiamo le classi CSS
-
-              trackElement.innerHTML = `
-                <p class="text-white fw-normal pe-3 pt-3">${index + 1}</p>
-                <img width="45px" src="${track.album.cover_medium}" alt="" />
-                <h6 class="text-white ps-3 fw-normal mb-0">${track.title}</h6>
-                <div>
-                  <p class="m-0 ps-5">${track.nb_streams}</p> <!-- numero di stream -->
-                </div>
-                <div>
-                  <p class="m-0 ms-5 ps-5">${track.duration_formatted}</p> <!-- durata del brano -->
-                </div>
-              `;
-              popularTracksContainer.appendChild(trackElement); // aggiungiamo il brano al contenitore
-            });
-          })
-          .catch((error) => {
-            console.error("Errore nel recupero dei brani:", error); // errore se non recuperiamo i brani
-          });
-      });
     })
     .catch((error) => {
-      console.error("Errore:", error); // errore generale
-      alert("Errore nel caricamento dei dati dell'artista."); // alert se qualcosa va storto
+      console.error("errore:", error);
+      alert("impossibile caricare i dettagli dell'artista.");
     });
 }
 
-// chiamiamo la funzione con l'ID dell'artista
+// funzione per cambiare lo sfondo a seconda della larghezza della finestra
+function setBackground() {
+  if (window.innerWidth >= 577) {
+    // per schermi grandi
+    artistBigImg.style.backgroundImage = "";
+  } else {
+    // per schermi piccoli
+    artistBigImg.style.backgroundImage = "";
+  }
+}
+
+// esegui subito quando carica la pagina
+setBackground();
+
+// ascolta il resize della finestra
+window.addEventListener("resize", setBackground);
+
+// prendi i dettagli dell'artista
 getArtistDetails(artistNewId);
+
+// codice per il numero casuale dei mi piace
+const randomNumber = document.getElementById("randomNumber");
+
+const randomLikedNumber = Math.floor(Math.random() * 15 + 1);
+randomNumber.innerText = `Hai messo mi piace a ${randomLikedNumber} brani`;
+
+// funzione per aggiungere il link all'artista
+function addArtistLink(artistId, artistName) {
+  const artistElement = document.getElementById("artistName"); // prendi l'elemento dove metteremo il link
+
+  // crea il link dinamicamente
+  const artistLink = document.createElement("a"); // crea un tag <a> per il link
+  artistLink.href = `artist.html?id=${artistId}`; // metti il link alla pagina dell'artista
+  artistLink.textContent = artistName; // imposta il nome dell'artista come testo del link
+  artistLink.style.textDecoration = "none"; // niente sottolineatura
+  artistLink.style.color = "inherit"; // usa lo stesso colore del testo
+
+  // rimuove il contenuto vecchio e mette il nuovo link
+  artistElement.innerHTML = ""; // cancella quello che c'era prima dentro
+  artistElement.appendChild(artistLink); // aggiungi il nuovo link all'elemento
+}

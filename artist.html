@@ -25,7 +25,7 @@
             </div>
             <div style="color:white" class="col-12">
               <i class="bi bi-house-door me-2"></i>
-              <a href="#" class="text-decoration-none ">Home</a>
+              <a href="homepage.html" class="text-decoration-none ">Home</a>
             </div>
             <div class="col-12">
               <i class="bi bi-search me-2"></i>
@@ -96,7 +96,7 @@
               <div class="album pt-2">
                 <nav class="d-flex justify-content-between">
                   <div>
-                    <button type="button" class="btn bg-black rounded-circle ps-2"><i class="bi bi-chevron-left text-white"></i></button>
+                   <a href="homepage.html"> <button type="button" class="btn bg-black rounded-circle ps-2"><i class="bi bi-chevron-left text-white"></i></button></a>
                     <button type="button" class="btn bg-black rounded-circle ps-2"><i class="bi bi-chevron-right text-white"></i></button>
                   </div>
                   <div class="btn-group bg-black">
@@ -123,8 +123,8 @@
                 <div class="d-flex">
                   <div class="row ps-4">
                     <p class="m-0 pt-5 mt-5 text-white fw-light fs-6"><i class="bi bi-patch-check-fill pe-2 text-primary"></i>Artista Verificato</p>
-                    <h1 class="text-white display-1 fw-bold titolo">Yellowcard</h1>
-                    <p class="fw-bold ascoltatori">3.446.783 ascoltatori mensili</p>
+                    <h1 class="text-white display-1 fw-bold titolo"></h1>
+                    <p class="fw-bold ascoltatori"></p>
                   </div>
                 </div>
               </div>
@@ -233,11 +233,11 @@
                   <h4 class="text-white fw-bold fs-5">Brani che ti piacciono</h4>
                   <div class="align-items-center col-12 d-flex flex-direction-column mt-4">
                     <div>
-                      <img src="/assets/imgs/main/image-8.jpg" width="70px" height="70px" style="border-radius: 50%; margin-right: 10px" alt="" />
+                      <img id="artist-img" src="" width="70px" height="70px" style="border-radius: 50%; margin-right: 10px" alt="" />
                     </div>
                     <div>
-                      <h4 style="font-size:1rem; color:white; font-weight: bold;">Hai messo mi piace a 11 brani</h4>
-                      <p style="font-size: 0.8rem; margin: 0">Di Yellowcard</p>
+                      <h4 id="randomNumber" style="font-size:1rem; color:white; font-weight: bold;"></h4>
+                      <p id="artistName" class="artistaLiked" style="font-size: 0.8rem; margin: 0"></p>
 
                     </div>
                   
@@ -274,8 +274,8 @@
                      <p style="font-size: 0.5rem; margin: 0;">In Camera. Yumi Zouma</p>
                      <p style="font-size: 0.8rem;">@ EP III</p>
                   </div>
-                  <div>
-                     <p style="font-size: 0.6rem; margin-left: 30px;">4 ore</p>
+                  <div   style=" width: 85px;" class="d-flex justify-content-end">
+                     <p style="font-size: 0.6rem; " class="lastSeen">4 ore</p>
                   </div>
               </div>
               <div class="col-12 d-flex flex-direction-column mt-1">
@@ -287,8 +287,8 @@
                      <p style="font-size: 0.5rem; margin: 0;">Aimed to kill. Jade Le Mac</p>
                      <p style="font-size: 0.8rem;">Aimed to Kill</p>
                   </div>
-                  <div>
-                     <p style="font-size: 0.6rem; margin-left: 50px;">4 ore</p>
+                  <div   style=" width: 110px;" class="d-flex justify-content-end">
+                     <p style="font-size: 0.6rem;" class="lastSeen">4 ore</p>
                   </div>
               </div>
               <div class="col-12 d-flex flex-direction-column mt-1">
@@ -300,8 +300,8 @@
                      <p style="font-size: 0.5rem; margin: 0;">New Kings.Sleeping Wolf</p>
                      <p style="font-size: 0.8rem;">🎵Twint Badass Mood</p>
                   </div>
-                  <div>
-                     <p style="font-size: 0.6rem; margin-left: 15px;">4 ore</p>
+                  <div   style=" width: 75px;" class="d-flex justify-content-end">
+                     <p style="font-size: 0.6rem;" class="lastSeen">4 ore</p>
                   </div>
               </div>
               </div>
@@ -315,7 +315,7 @@
           <img src="./assets/imgs/search/image-1.jpeg" height="50" width="50" alt="Album cover" />
           <div class="ms-2 text-white pe-3">
             <p class="mb-0 text-white">Fat Funny Friend</p>
-            <small class="grigio">Maddie Zahm</small>
+            <small class="grigio" id="artistName">Maddie Zahm</small>
           </div>
           <div>
             <i class="bi bi-heart text-white"></i>
@@ -419,8 +419,6 @@
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
-    <script src="script.js"></script>
-    <script src="album.js"></script>
     <script src="./artist.js"></script>
   </body>
 </html>
