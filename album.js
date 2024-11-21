@@ -20,6 +20,7 @@ const albumTitle = document.getElementById("album-title");
 const artistName = document.getElementById("artist-name");
 const artistImg = document.getElementById("artist-img");
 const tracklistContainer = document.getElementById("tracklist");
+const albumCover = document.getElementById("albumCover");
 
 // funzione per ottenere i parametri dalla query dell'URL
 function getQueryParameter(name) {
@@ -52,7 +53,7 @@ function getMainAlbumDetails(albumId) {
       albumTitle.innerText = data.title; // titolo album
       artistName.innerText = data.artist.name; // nome artista
       artistImg.src = data.artist.picture_medium; // immagine artista
-
+      albumCover.src = data.cover_medium;
       const tracks = data.tracks.data; // ottieni la lista dei brani
 
       tracklistContainer.innerHTML = ""; // svuota la lista dei brani
@@ -85,18 +86,18 @@ function getMainAlbumDetails(albumId) {
         `;
 
         tracklistContainer.appendChild(trackDiv); // aggiungi il brano al DOM
+
         trackDiv.addEventListener("click", () => {
           const songTitle = document.getElementById("songTitle");
           const imgIcon = document.getElementById("imgIcon");
           const songTitle2 = document.getElementById("songTitle2");
           const artistName1 = document.getElementById("artistName1");
-          const albumCover = document.getElementById("albumCover");
 
           // aggiorna i dettagli del brano quando clicchi
           songTitle.innerText = `${track.title}, ${track.artist.name}`;
           songTitle2.innerText = `${track.title}`;
           artistName1.innerText = `${track.artist.name}`;
-          albumCover.innerText = `${albumImg}`; // aggiorna l'immagine dell'album
+          albumCover.src = data.cover_medium; // aggiorna l'immagine dell'album
         });
       });
     })
