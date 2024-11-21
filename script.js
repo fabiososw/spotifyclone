@@ -1,5 +1,5 @@
 // tempo casuale dell'ultima volta online
-const lastSeenTime = document.querySelectorAll(".timeSeen");
+const lastSeenTime = document.querySelectorAll(".lastSeen");
 
 lastSeenTime.forEach((timeSeen) => {
   let randomChoice = Math.random(); // scegliamo un numero random
@@ -9,7 +9,7 @@ lastSeenTime.forEach((timeSeen) => {
     lastTimeSeen = Math.floor(Math.random() * 61); // se è sotto 0.5, mettiamo minuti
     timeSeen.innerText = lastTimeSeen + " minuti"; // tempo in minuti
   } else {
-    lastTimeSeen = Math.floor(Math.random() * 13); // altrimenti ore
+    lastTimeSeen = Math.floor(Math.random() * 13 + 1); // altrimenti ore
     timeSeen.innerText = lastTimeSeen + " ore"; // tempo in ore
   }
 });

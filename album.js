@@ -1,3 +1,17 @@
+const lastSeenTime = document.querySelectorAll(".lastSeen");
+
+lastSeenTime.forEach((timeSeen) => {
+  let randomChoice = Math.random(); // scegliamo un numero random
+  let lastTimeSeen; // variabile per il tempo
+
+  if (randomChoice < 0.5) {
+    lastTimeSeen = Math.floor(Math.random() * 61); // se è sotto 0.5, mettiamo minuti
+    timeSeen.innerText = lastTimeSeen + " minuti"; // tempo in minuti
+  } else {
+    lastTimeSeen = Math.floor(Math.random() * 13 + 1); // altrimenti ore
+    timeSeen.innerText = lastTimeSeen + " ore"; // tempo in ore
+  }
+});
 // selezioniamo gli elementi nel DOM
 const albumImg = document.getElementById("album-img");
 const albumTitle = document.getElementById("album-title");
