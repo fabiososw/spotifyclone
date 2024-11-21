@@ -39,6 +39,9 @@ document.getElementsByTagName('form')[0].addEventListener("DOMContentLoaded", (e
   })
 }*/
 
+document.getElementById('houseBtn').addEventListener('click', () => {
+  window.location.href = "homepage.html"
+})
 document.getElementById('toHomepage').addEventListener('click', () => {
   window.location.href = "homepage.html"
 })
