@@ -133,6 +133,10 @@ footer {
     background: linear-gradient(0deg, rgb(22, 22, 22) 0%, rgb(51, 51, 51) 100%);
   }
 }
+.album {
+  background: rgb(38, 38, 38);
+  background: linear-gradient(0deg, rgb(22, 22, 22) 0%, rgb(51, 51, 51) 100%);
+}
 .durata {
   color: #b3b3b3 !important;
 }
@@ -143,8 +147,7 @@ footer {
   color: #1db954;
 }
 
-.songs,
-.albumalbum {
+.songs {
   background: rgb(10, 10, 10);
   background: linear-gradient(0deg, rgb(10, 10, 9) 0%, rgb(24, 24, 23) 100%);
 }
