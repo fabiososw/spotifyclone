@@ -16,23 +16,27 @@
     button:hover{color: white;}
     #Recenti:hover{color: white; font-size: 1.1rem;}
     #playlistAside:hover{background-color: #212529; transform: scaleX(1.05)}
-    #playlistMain:hover{transform: scale(1.05)}
+    #playlistMain:hover{transform: scale(1.05);}
     ::-webkit-scrollbar {width: 6px;}
+    @media screen and (min-width: 200px) and (max-width: 990px) {
+      main h1{text-align: center; font-size: x-large; margin-top: 10px; margin-bottom: 10px;}
+    }
   </style>
   <body class="h-100 w-100" style="overflow: hidden;">
     <nav class="container-fluid d-lg-flex vertical-align-middle d-block bg-black fixed-top-lg" style="height: 70px;" id="nav" >
-      <div class="row ps-2 py-2  w-100 ">
+      <div class="row ps-2 py-2  w-100 h-100 ">
         <div class="col-12 col-lg-3 col-xxl-4 d-none d-lg-flex d-flex align-items-center me-0" style="width: 10%;">
           <i class="bi bi-three-dots rounded-50" style="font-size: 2rem;"></i>
           <button type="button" class="btn bg-black rounded-circle px-2"><i class="bi bi-chevron-left text-secondary" style="font-size: 2rem;"></i></button>
           <button type="button" class="btn bg-black rounded-circle px-2"><i class="bi bi-chevron-right text-secondary" style="font-size: 2rem;"></i></button>
         </div>   
-        <div class="col-12 col-lg-3 col-xxl-4 d-flex align-middle p-0 ms-2">
+        <div class="col-12 col-lg-3 col-xxl-4 d-flex align-middle h-100 p-0 ms-2">
           <div class="d-none d-lg-flex">
             <button type="button" id="houseBtn" class="rounded-circle bg-dark px-2 me-3 mt-2"><i class="text-white bi bi-house-door" style="font-size: 30px;"></i></button>
           </div> 
-          <form class="d-flex align-items-center" style="width: 70%;">
-              <input type="text" class="bg-dark text-white border-0 px-3 border-0 rounded-pill w-100" placeholder="Cosa vuoi ascoltare?" id="input" style="height: 90%;">
+          <form class="d-flex align-items-center h-100" style="width: 70%;">
+              <p class="h3 text-white fs-5 mb-0 d-block fw-bolder d-lg-none  ">CERCA</p>
+              <input type="text" class=" bg-dark text-white border-0 px-3 border-0 rounded-pill h-75 w-100" placeholder="Cosa vuoi ascoltare?" id="input" style="height: 90%;">
               <button type="button" class="rounded-circle border-0 bg-transparent" id="searchBtn"><i class="text-white bi bi-search" style="font-size: 1.3rem;"></i></button>
               <i class="bi bi-filter-square text-white-subtle" style="font-size: 1.3rem;"></i>
           </form>    
