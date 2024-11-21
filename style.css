@@ -133,11 +133,6 @@ footer {
     background: linear-gradient(0deg, rgb(22, 22, 22) 0%, rgb(51, 51, 51) 100%);
   }
 }
-@media (min-width: 577px) {
-  .album {
-    background-image: url(https://wallpapercat.com/w/full/5/e/f/2359228-2048x1536-desktop-hd-yellowcard-band-background-image.jpg);
-  }
-}
 .durata {
   color: #b3b3b3 !important;
 }
