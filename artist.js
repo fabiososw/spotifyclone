@@ -12,16 +12,17 @@ lastSeenTime.forEach((timeSeen) => {
     timeSeen.innerText = lastTimeSeen + " ore"; // tempo in ore
   }
 });
-// prendi l'id dell'artista dall'url
+// id dell'artista dall'url
 const urlParams = new URLSearchParams(window.location.search);
 const artistNewId = urlParams.get("id");
 
-// prendi gli elementi da aggiornare
+// elementi da aggiornare
 const artistBigImg = document.querySelector(".album");
 const artistNewName = document.querySelector(".titolo");
 const artistListeners = document.querySelector(".ascoltatori");
 const artistaLiked = document.querySelector(".artistaLiked");
 const artistLogo = document.getElementById("artist-img");
+const tracklistContainer = document.getElementById("tracklist");
 
 // configurazione api
 const API_KEY = "2b8107ec5amsh419b2e6df1cbbc4p164c14jsn8671d66a70cf"; // chiave rapidapi
@@ -40,37 +41,76 @@ function getArtistDetails(artistId) {
     }
   })
     .then((response) => {
-      if (!response.ok) throw new Error("errore nel recuperare i dettagli dell'artista");
+      if (!response.ok) throw new Error("Errore nel recuperare i dettagli dell'artista");
       return response.json();
     })
     .then((data) => {
       if (data) {
-        // aggiorna immagine, nome, e ascoltatori mensili
+        // immagine, nome, e ascoltatori mensili
         if (artistBigImg) artistBigImg.style.backgroundImage = `url(${data.picture_big})`;
         if (artistNewName) artistNewName.innerText = data.name;
         if (artistListeners) artistListeners.innerText = `${data.nb_fan} ascoltatori mensili`;
         if (artistaLiked) artistaLiked.innerText = `Di ${data.name}`;
-        if (artistImg) artistImg.src = `${data.picture}`;
+        if (artistImg) artistImg.src = data.picture;
 
-        // chiama la funzione per aggiungere il link all'artista
-        addArtistLink(data.id, data.name); // passa l'id e il nome dell'artista
+        //fetch per brani di ogni artiista
+        return fetch(`https://striveschool-api.herokuapp.com/api/deezer/artist/${artistId}/top?limit=50`, {
+          method: "GET",
+          headers: {
+            "x-rapidapi-key": "a14a691c71msh9380c2e65ed3469p1fde94jsn0c2af8566a22",
+            "x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com"
+          }
+        });
       } else {
-        console.log("Nessun dato trovato");
+        throw new Error("Nessun dato trovato per l'artista");
+      }
+    })
+    .then((response) => {
+      if (!response.ok) throw new Error("Errore nel recuperare i brani principali");
+      return response.json();
+    })
+    .then((track) => {
+      if (track.data) {
+        // Aggiungi i brani uno per uno
+        track.data.forEach((track, index) => {
+          const trackDiv = document.createElement("div");
+
+          trackDiv.classList.add("d-flex", "mt-3", "tracklist", "justify-content-between");
+
+          trackDiv.innerHTML = `
+            <div>
+              <div class="col d-flex align-items-center justify-content-between ps-4">
+                <p class="text-white fw-normal pe-3 pt-3">${index + 1}</p>
+                <img width="45px" src="${track.album.cover_small}" alt="${track.title}" />
+                <h6 class="text-white ps-3 fw-normal mb-0">${track.title}</h6>
+                <div>
+                  <p class="m-0 ps-5">${track.rank}</p>
+                </div>
+                <div>
+                  <p class="m-0 ms-5 ps-5">${Math.floor(track.duration / 60)}:${track.duration % 60}</p>
+                </div>
+              </div>
+            </div>`;
+
+          tracklistContainer.appendChild(trackDiv);
+        });
+      } else {
+        console.log("Nessun brano trovato");
       }
     })
     .catch((error) => {
-      console.error("errore:", error);
-      alert("impossibile caricare i dettagli dell'artista.");
+      console.error("Errore:", error);
+      alert("Impossibile caricare i dettagli dell'artista o i brani principali.");
     });
 }
 
 // funzione per cambiare lo sfondo a seconda della larghezza della finestra
 function setBackground() {
   if (window.innerWidth >= 577) {
-    // per schermi grandi
+    // schermi grandi
     artistBigImg.style.backgroundImage = "";
   } else {
-    // per schermi piccoli
+    // schermi piccoli
     artistBigImg.style.backgroundImage = "";
   }
 }
@@ -78,13 +118,13 @@ function setBackground() {
 // esegui subito quando carica la pagina
 setBackground();
 
-// ascolta il resize della finestra
+// resize della finestra
 window.addEventListener("resize", setBackground);
 
-// prendi i dettagli dell'artista
+//  dettagli dell'artista
 getArtistDetails(artistNewId);
 
-// codice per il numero casuale dei mi piace
+// numero casuale  mi piace
 const randomNumber = document.getElementById("randomNumber");
 
 const randomLikedNumber = Math.floor(Math.random() * 15 + 1);
@@ -92,16 +132,16 @@ randomNumber.innerText = `Hai messo mi piace a ${randomLikedNumber} brani`;
 
 // funzione per aggiungere il link all'artista
 function addArtistLink(artistId, artistName) {
-  const artistElement = document.getElementById("artistName"); // prendi l'elemento dove metteremo il link
+  const artistElement = document.getElementById("artistName");
 
-  // crea il link dinamicamente
-  const artistLink = document.createElement("a"); // crea un tag <a> per il link
-  artistLink.href = `artist.html?id=${artistId}`; // metti il link alla pagina dell'artista
-  artistLink.textContent = artistName; // imposta il nome dell'artista come testo del link
-  artistLink.style.textDecoration = "none"; // niente sottolineatura
-  artistLink.style.color = "inherit"; // usa lo stesso colore del testo
+  // crea link dinamicamente
+  const artistLink = document.createElement("a");
+  artistLink.href = `artist.html?id=${artistId}`;
+  artistLink.textContent = artistName;
+  artistLink.style.textDecoration = "none";
+  artistLink.style.color = "inherit";
 
   // rimuove il contenuto vecchio e mette il nuovo link
-  artistElement.innerHTML = ""; // cancella quello che c'era prima dentro
+  artistElement.innerHTML = "";
   artistElement.appendChild(artistLink); // aggiungi il nuovo link all'elemento
 }
