@@ -15,9 +15,9 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body class="h-100 w-100">
-    <div class="container-fluid h-100 p-0">
+    <div class="container-fluid h-100 p-0 ">
       <div class="row h-100">
-        <div class="col-3 bg-black align-items-center justify-content-center ps-4" style="font-weight: 500;">
+        <div class=" d-none d-lg-block  col-lg-3 bg-black align-items-center justify-content-center ps-4" style="font-weight: 500;">
           <div id="sezione1">
           <div class="row ps-2 py-2 gy-2 mb-3">
             <div class="col-12">
@@ -90,7 +90,7 @@
           </div>
         </div>
         
-        <div class="col-7 center px-0">
+        <div class="col-7 center px-0 col-12 col-lg-7">
           <div data-bs-spy="scroll" data-bs-offset="0" class="scrollspy-example text-secondary" tabindex="0" style="height: 100vh; overflow-y: auto; overflow-x: hidden;">
             <main class="h-100 w-100">
               <div class="album pt-2">
@@ -135,7 +135,7 @@
                 <button type="button" class="btn d btn-outline-light px-3 py-1 ms-3 fs-6">FOLLOWING</button>
                 <i class="bi bi-three-dots ps-3 fs-2"></i>
               </div>
-              <div class="d-flex justify-content-between">
+              <div class="d-flex justify-content-between flex-column-reverse">
                 <div class="align-items-center ps-4 pt-2 justify-content-between col-6">
                   <h4 class="text-white fw-bold pb-4 fs-5">Popolari</h4>
                   <div class="row pb-3">
@@ -254,7 +254,7 @@
         </div>
 
         <!-- sidebar -->
-        <div class="col-2 bg-black px-2 py-2">
+        <div class="d-none d-lg-block col-2 bg-black px-2 py-2  ">
           <div class="row">
                <div class=" col-12 d-flex align-items-center justify-content-between h-auto w-100 mt-4">
                   <div>
@@ -307,113 +307,190 @@
               </div>
           </div>    
       
-    <!-- il footer inizia qui -->
-    <footer class="container-fluid fixed-bottom py-2 mt-6">
-      <div class="row align-items-center">
-        <!-- info canzone sezione -->
-        <div class="col-3 d-flex align-items-center">
-          <img src="./assets/imgs/search/image-1.jpeg" height="50" width="50" alt="Album cover" />
-          <div class="ms-2 text-white pe-3">
-            <p class="mb-0 text-white">Fat Funny Friend</p>
-            <small class="grigio">Maddie Zahm</small>
-          </div>
-          <div>
-            <i class="bi bi-heart text-white"></i>
-          </div>
-        </div>
-
-        <!-- centro playback controlli -->
-        <div class="col-6 d-flex flex-column align-items-center">
-          <!-- bottoni controlli -->
-          <div class="player d-flex justify-content-center">
-            <button class="cambioColore btn text-white bg-transparent px-2 fs-5">
-              <i class="bi bi-shuffle"></i>
-            </button>
-            <button class="btn text-white bg-transparent px-2 fs-3">
-              <i class="bi bi-skip-start-fill"></i>
-            </button>
-            <button class="btn text-white bg-transparent px-2 fs-2">
-              <i class="bi bi-play-circle-fill"></i>
-            </button>
-            <button class="btn text-white bg-transparent px-2 fs-3">
-              <i class="bi bi-skip-end-fill"></i>
-            </button>
-            <button class="btn bg-transparent px-2 fs-5 text-white">
-              <svg data-encore-id="icon" role="img" aria-hidden="true" viewBox="0 0 16 16 ">
-                <path
-                  d="M0 4.75A3.75 3.75 0 0 1 3.75 1h8.5A3.75 3.75 0 0 1 16 4.75v5a3.75 3.75 0 0 1-3.75 3.75H9.81l1.018 1.018a.75.75 0 1 1-1.06 1.06L6.939 12.75l2.829-2.828a.75.75 0 1 1 1.06 1.06L9.811 12h2.439a2.25 2.25 0 0 0 2.25-2.25v-5a2.25 2.25 0 0 0-2.25-2.25h-8.5A2.25 2.25 0 0 0 1.5 4.75v5A2.25 2.25 0 0 0 3.75 12H5v1.5H3.75A3.75 3.75 0 0 1 0 9.75v-5z"
-                ></path>
-              </svg>
-            </button>
-          </div>
-
-          <!-- Progress Bar -->
-          <div class="d-flex justify-content-between text-white w-75 align-items-center">
-            <small class="mx-2">1:30</small>
-            <div class="progress w-100">
-              <div class="progress-bar pt-1" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+          <footer class="container-fluid fixed-bottom py-2 d-none d-sm-block">
+            <div class="row align-items-center">
+              <!-- info canzone sezione -->
+              <div class="col-3 d-flex align-items-center">
+                <img src="./assets/imgs/search/image-1.jpeg" id="albumCover" height="50" width="50" alt="Album cover" />
+                <div class="ms-2 text-white pe-3">
+                  <p class="mb-0 text-white" id="songTitle2">Fat Funny Friend</p>
+                  <small class="grigio" id="artistName1">Maddie Zahm</small>
+                </div>
+                <div>
+                  <button class="heart btn bg-transparent">
+                    <i class="bi bi-heart text-white"></i>
+                  </button>
+                </div>
+              </div>
+      
+              <!-- centro playback controlli -->
+              <div class="col-6 d-flex flex-column align-items-center">
+                <!-- bottoni controlli -->
+                <div class="player d-flex justify-content-center">
+                  <button class="btnHover cambioColore btn text-white bg-transparent px-2 fs-5">
+                    <i class="bi bi-shuffle"></i>
+                  </button>
+                  <button class="btnHover btn text-white bg-transparent px-2 fs-3">
+                    <i class="bi bi-skip-start-fill"></i>
+                  </button>
+                  <button class="btnHover btn text-white bg-transparent px-2 fs-2">
+                    <i class="bi bi-play-circle-fill"></i>
+                  </button>
+                  <button class="btnHover btn text-white bg-transparent px-2 fs-3">
+                    <i class="bi bi-skip-end-fill"></i>
+                  </button>
+                  <button class="btnHover btn bg-transparent px-2 fs-5 text-white">
+                    <svg data-encore-id="icon" role="img" aria-hidden="true" viewBox="0 0 16 16 ">
+                      <path
+                        d="M0 4.75A3.75 3.75 0 0 1 3.75 1h8.5A3.75 3.75 0 0 1 16 4.75v5a3.75 3.75 0 0 1-3.75 3.75H9.81l1.018 1.018a.75.75 0 1 1-1.06 1.06L6.939 12.75l2.829-2.828a.75.75 0 1 1 1.06 1.06L9.811 12h2.439a2.25 2.25 0 0 0 2.25-2.25v-5a2.25 2.25 0 0 0-2.25-2.25h-8.5A2.25 2.25 0 0 0 1.5 4.75v5A2.25 2.25 0 0 0 3.75 12H5v1.5H3.75A3.75 3.75 0 0 1 0 9.75v-5z"
+                      ></path>
+                    </svg>
+                  </button>
+                </div>
+      
+                <!-- Progress Bar -->
+                <div class="d-flex justify-content-between text-white w-75 align-items-center">
+                  <small class="mx-2">1:30</small>
+                  <div class="progress w-100">
+                    <div class="progress-bar pt-1" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                  <small class="ms-2">3:00</small>
+                </div>
+              </div>
+      
+              <!-- destra -->
+              <div class="player1 player col-3 d-flex justify-content-end align-items-center">
+                <!-- Volume Slider -->
+      
+                <!-- altri contorlli -->
+                <button class="btn text-white pe-1">
+                  <svg data-encore-id="icon" role="img" aria-hidden="true" viewBox="0 0 16 16" class="player">
+                    <path
+                      fill="white"
+                      d="M13.426 2.574a2.831 2.831 0 0 0-4.797 1.55l3.247 3.247a2.831 2.831 0 0 0 1.55-4.797zM10.5 8.118l-2.619-2.62A63303.13 63303.13 0 0 0 4.74 9.075L2.065 12.12a1.287 1.287 0 0 0 1.816 1.816l3.06-2.688 3.56-3.129zM7.12 4.094a4.331 4.331 0 1 1 4.786 4.786l-3.974 3.493-3.06 2.689a2.787 2.787 0 0 1-3.933-3.933l2.676-3.045 3.505-3.99z"
+                    ></path>
+                  </svg>
+                </button>
+                <button class="btn text-white pe-1">
+                  <svg data-encore-id="icon" role="img" aria-hidden="true" viewBox="0 0 16 16" class="Svg-sc-ytk21e-0 dYnaPI">
+                    <path
+                      d="M15 15H1v-1.5h14V15zm0-4.5H1V9h14v1.5zm-14-7A2.5 2.5 0 0 1 3.5 1h9a2.5 2.5 0 0 1 0 5h-9A2.5 2.5 0 0 1 1 3.5zm2.5-1a1 1 0 0 0 0 2h9a1 1 0 1 0 0-2h-9z"
+                    ></path>
+                  </svg>
+                </button>
+                <button class="btn text-white pe-1">
+                  <svg data-encore-id="icon" role="img" aria-hidden="true" viewBox="0 0 16 16" class="Svg-sc-ytk21e-0 dYnaPI">
+                    <path
+                      d="M6 2.75C6 1.784 6.784 1 7.75 1h6.5c.966 0 1.75.784 1.75 1.75v10.5A1.75 1.75 0 0 1 14.25 15h-6.5A1.75 1.75 0 0 1 6 13.25V2.75zm1.75-.25a.25.25 0 0 0-.25.25v10.5c0 .138.112.25.25.25h6.5a.25.25 0 0 0 .25-.25V2.75a.25.25 0 0 0-.25-.25h-6.5zm-6 0a.25.25 0 0 0-.25.25v6.5c0 .138.112.25.25.25H4V11H1.75A1.75 1.75 0 0 1 0 9.25v-6.5C0 1.784.784 1 1.75 1H4v1.5H1.75zM4 15H2v-1.5h2V15z"
+                    ></path>
+                    <path d="M13 10a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm-1-5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"></path>
+                  </svg>
+                </button>
+                <button class="btn text-white pe-1">
+                  <svg
+                    data-encore-id="icon"
+                    role="presentation"
+                    aria-label="Volume alto"
+                    aria-hidden="false"
+                    id="volume-icon"
+                    viewBox="0 0 16 16"
+                    class="Svg-sc-ytk21e-0 kcUFwU"
+                  >
+                    <path
+                      d="M9.741.85a.75.75 0 0 1 .375.65v13a.75.75 0 0 1-1.125.65l-6.925-4a3.642 3.642 0 0 1-1.33-4.967 3.639 3.639 0 0 1 1.33-1.332l6.925-4a.75.75 0 0 1 .75 0zm-6.924 5.3a2.139 2.139 0 0 0 0 3.7l5.8 3.35V2.8l-5.8 3.35zm8.683 4.29V5.56a2.75 2.75 0 0 1 0 4.88z"
+                    ></path>
+                    <path d="M11.5 13.614a5.752 5.752 0 0 0 0-11.228v1.55a4.252 4.252 0 0 1 0 8.127v1.55z"></path>
+                  </svg>
+                </button>
+                <div class="progress w-25 ms-2">
+                  <div class="progress-bar pt-1" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <button class="btn text-white">
+                  <svg data-encore-id="icon" role="img" aria-hidden="true" viewBox="0 0 16 16" class="Svg-sc-ytk21e-0 dYnaPI">
+                    <path
+                      d="M6.53 9.47a.75.75 0 0 1 0 1.06l-2.72 2.72h1.018a.75.75 0 0 1 0 1.5H1.25v-3.579a.75.75 0 0 1 1.5 0v1.018l2.72-2.72a.75.75 0 0 1 1.06 0zm2.94-2.94a.75.75 0 0 1 0-1.06l2.72-2.72h-1.018a.75.75 0 1 1 0-1.5h3.578v3.579a.75.75 0 0 1-1.5 0V3.81l-2.72 2.72a.75.75 0 0 1-1.06 0z"
+                    ></path>
+                  </svg>
+                </button>
+              </div>
             </div>
-            <small class="ms-2">3:00</small>
-          </div>
-        </div>
-
-        <!-- destra -->
-        <div class="player1 player col-3 d-flex justify-content-end align-items-center">
-          <!-- Volume Slider -->
-
-          <!-- altri contorlli -->
-          <button class="btn text-white pe-1">
-            <svg data-encore-id="icon" role="img" aria-hidden="true" viewBox="0 0 16 16" class="player">
-              <path
-                d="M13.426 2.574a2.831 2.831 0 0 0-4.797 1.55l3.247 3.247a2.831 2.831 0 0 0 1.55-4.797zM10.5 8.118l-2.619-2.62A63303.13 63303.13 0 0 0 4.74 9.075L2.065 12.12a1.287 1.287 0 0 0 1.816 1.816l3.06-2.688 3.56-3.129zM7.12 4.094a4.331 4.331 0 1 1 4.786 4.786l-3.974 3.493-3.06 2.689a2.787 2.787 0 0 1-3.933-3.933l2.676-3.045 3.505-3.99z"
-              ></path>
-            </svg>
-          </button>
-          <button class="btn text-white pe-1">
-            <svg data-encore-id="icon" role="img" aria-hidden="true" viewBox="0 0 16 16" class="Svg-sc-ytk21e-0 dYnaPI">
-              <path
-                d="M15 15H1v-1.5h14V15zm0-4.5H1V9h14v1.5zm-14-7A2.5 2.5 0 0 1 3.5 1h9a2.5 2.5 0 0 1 0 5h-9A2.5 2.5 0 0 1 1 3.5zm2.5-1a1 1 0 0 0 0 2h9a1 1 0 1 0 0-2h-9z"
-              ></path>
-            </svg>
-          </button>
-          <button class="btn text-white pe-1">
-            <svg data-encore-id="icon" role="img" aria-hidden="true" viewBox="0 0 16 16" class="Svg-sc-ytk21e-0 dYnaPI">
-              <path
-                d="M6 2.75C6 1.784 6.784 1 7.75 1h6.5c.966 0 1.75.784 1.75 1.75v10.5A1.75 1.75 0 0 1 14.25 15h-6.5A1.75 1.75 0 0 1 6 13.25V2.75zm1.75-.25a.25.25 0 0 0-.25.25v10.5c0 .138.112.25.25.25h6.5a.25.25 0 0 0 .25-.25V2.75a.25.25 0 0 0-.25-.25h-6.5zm-6 0a.25.25 0 0 0-.25.25v6.5c0 .138.112.25.25.25H4V11H1.75A1.75 1.75 0 0 1 0 9.25v-6.5C0 1.784.784 1 1.75 1H4v1.5H1.75zM4 15H2v-1.5h2V15z"
-              ></path>
-              <path d="M13 10a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm-1-5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"></path>
-            </svg>
-          </button>
-          <button class="btn text-white pe-1">
-            <svg
-              data-encore-id="icon"
-              role="presentation"
-              aria-label="Volume alto"
-              aria-hidden="false"
-              id="volume-icon"
-              viewBox="0 0 16 16"
-              class="Svg-sc-ytk21e-0 kcUFwU"
-            >
-              <path
-                d="M9.741.85a.75.75 0 0 1 .375.65v13a.75.75 0 0 1-1.125.65l-6.925-4a3.642 3.642 0 0 1-1.33-4.967 3.639 3.639 0 0 1 1.33-1.332l6.925-4a.75.75 0 0 1 .75 0zm-6.924 5.3a2.139 2.139 0 0 0 0 3.7l5.8 3.35V2.8l-5.8 3.35zm8.683 4.29V5.56a2.75 2.75 0 0 1 0 4.88z"
-              ></path>
-              <path d="M11.5 13.614a5.752 5.752 0 0 0 0-11.228v1.55a4.252 4.252 0 0 1 0 8.127v1.55z"></path>
-            </svg>
-          </button>
-          <div class="progress w-25 ms-2">
-            <div class="progress-bar pt-1" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
-          </div>
-          <button class="btn text-white">
-            <svg data-encore-id="icon" role="img" aria-hidden="true" viewBox="0 0 16 16" class="Svg-sc-ytk21e-0 dYnaPI">
-              <path
-                d="M6.53 9.47a.75.75 0 0 1 0 1.06l-2.72 2.72h1.018a.75.75 0 0 1 0 1.5H1.25v-3.579a.75.75 0 0 1 1.5 0v1.018l2.72-2.72a.75.75 0 0 1 1.06 0zm2.94-2.94a.75.75 0 0 1 0-1.06l2.72-2.72h-1.018a.75.75 0 1 1 0-1.5h3.578v3.579a.75.75 0 0 1-1.5 0V3.81l-2.72 2.72a.75.75 0 0 1-1.06 0z"
-              ></path>
-            </svg>
-          </button>
-        </div>
-      </div>
-    </footer>
-
+          </footer>
+          <!-----------responsive footer---------------->
+      
+          <footer class="responsiveFooter container-fluid fixed-bottom d-block d-sm-none bg-black p-0 m-0">
+            <div class="d-flex justify-content-between">
+              <div class="d-flex justify-content-around align-items-center ms-5 gap-5">
+                <div id="imgIcon" class="rounded-circle bg-black d-flex justify-content-center align-items-center overflow-hidden" style="width: 30px; height: 30px">
+                  <img
+                    style="object-fit: cover"
+                    id="album-img"
+                    class="custom-shadow"
+                    width="180px"
+                    height="180px"
+                    src="https://e-cdns-images.dzcdn.net/images/cover/971c39d2a04b89d6b7028fed705d3676/250x250-000000-80-0-0.jpg"
+                  />
+                </div>
+      
+                <div id="songTitle" class="titleContainer text-white"><span class="text-white fs-4 ms-3 textMovement"></span></div>
+              </div>
+      
+              <div class="d-flex justify-content-around align-items-center gap-3">
+                <div>
+                  <button class="heart btn bg-transparent">
+                    <i class="bi bi-heart text-white"></i>
+                  </button>
+                </div>
+                <div>
+                  <svg data-encore-id="icon" role="img" aria-hidden="true" viewBox="0 0 16 16" class="icon1">
+                    <path
+                      fill="white"
+                      d="M6 2.75C6 1.784 6.784 1 7.75 1h6.5c.966 0 1.75.784 1.75 1.75v10.5A1.75 1.75 0 0 1 14.25 15h-6.5A1.75 1.75 0 0 1 6 13.25V2.75zm1.75-.25a.25.25 0 0 0-.25.25v10.5c0 .138.112.25.25.25h6.5a.25.25 0 0 0 .25-.25V2.75a.25.25 0 0 0-.25-.25h-6.5zm-6 0a.25.25 0 0 0-.25.25v6.5c0 .138.112.25.25.25H4V11H1.75A1.75 1.75 0 0 1 0 9.25v-6.5C0 1.784.784 1 1.75 1H4v1.5H1.75zM4 15H2v-1.5h2V15z"
+                    ></path>
+                    <path d="M13 10a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm-1-5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"></path>
+                  </svg>
+                </div>
+                <div>
+                  <button class="btn bg-transparent">
+                    <i class="bi bi-play-fill text-white" style="height: 40px; width: 40px"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="d-flex justify-content-around bg-black">
+              <div>
+                <a href="./homepage.html">
+                  <button class="btn bg-transparent">
+                    <i class="bi bi-house-door-fill text-white" id="home" style="height: 30px; width: 30px"></i>
+                    <br />
+                    <p class="text-white">Home</p>
+                  </button>
+                </a>
+              </div>
+      
+              <div>
+                <a href="./searchpage.html">
+                  <button class="btn bg-transparent">
+                    <i class="bi bi-search text-white" id="search" style="height: 30px; width: 30px"> </i>
+                    <br />
+                    <p class="text-white">Cerca</p>
+                  </button>
+                </a>
+              </div>
+              <div>
+                <button class="btn bg-transparent">
+                  <div>
+                    <svg data-encore-id="icon" role="img" aria-hidden="true" viewBox="0 0 24 24" class="icon1">
+                      <path
+                        fill="white"
+                        d="M14.5 2.134a1 1 0 0 1 1 0l6 3.464a1 1 0 0 1 .5.866V21a1 1 0 0 1-1 1h-6a1 1 0 0 1-1-1V3a1 1 0 0 1 .5-.866zM16 4.732V20h4V7.041l-4-2.309zM3 22a1 1 0 0 1-1-1V3a1 1 0 0 1 2 0v18a1 1 0 0 1-1 1zm6 0a1 1 0 0 1-1-1V3a1 1 0 0 1 2 0v18a1 1 0 0 1-1 1z"
+                      ></path>
+                    </svg>
+                  </div>
+                  <p class="text-white">Libreria</p>
+                </button>
+              </div>
+            </div>
+          </footer>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
