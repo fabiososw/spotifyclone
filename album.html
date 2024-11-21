@@ -30,7 +30,7 @@
             </div>
             <div class="col-12">
               <i class="bi bi-search me-2"></i>
-              <a href="#" class="text-decoration-none">Cerca</a>
+              <a href="./searchpage.html" class="text-decoration-none">Cerca</a>
             </div>
             <div class="col-12">
               <i class="bi bi-collection me-2"></i>
@@ -62,29 +62,29 @@
               style="height: 400px; overflow-y: auto"
             >
               <ul class="list-unstyled ps-2">
-                <li>Playlist per rilassarti in vacanza 🌴</li>
-                <li>Musica per la tua giornata di allenamento 💪</li>
-                <li>Canzoni per un'atmosfera retro</li>
-                <li>Brani per un pomeriggio di studio 📚</li>
-                <li>Playlist per una serata romantica 💕</li>
-                <li>Musica per un workout energico</li>
-                <li>Melodie per un'auto notturna 🚗</li>
-                <li>Brani per un momento di relax a casa</li>
-                <li>Musica perfetta per l'estate ☀️</li>
-                <li>Playlist per concentrarsi meglio</li>
-                <li>Classici anni '90</li>
-                <li>Mix di electro pop 🎧</li>
-                <li>Suoni acustici per chillare 🎸</li>
-                <li>Brani per un'atmosfera jazz 🎷</li>
-                <li>Hits del momento</li>
-                <li>Playlist per ballare tutta la notte 🕺</li>
-                <li>Musica indie per scoprire nuovi artisti</li>
-                <li>Brani pop per quando hai voglia di cantare 🎤</li>
-                <li>Playlist per una serata al chiuso</li>
-                <li>Rock classico da ascoltare</li>
-                <li>Melodie nuove e interessanti</li>
-                <li>Vibe chill per le tue pause 🧘‍♂️</li>
-                <li>Colonna sonora per l'inverno ❄️</li>
+                <a href="#" class="text-decoration-none"><li>Playlist per rilassarti in vacanza 🌴</li></a>
+                <a href="#" class="text-decoration-none"><li class="mt-2">Musica per la tua giornata di allenamento 💪</li></a>
+                <a href="#" class="text-decoration-none"><li class="mt-2">Canzoni per un'atmosfera retro</li></a>
+                <a href="#" class="text-decoration-none"><li class="mt-2">Brani per un pomeriggio di studio 📚</li></a>
+                <a href="#" class="text-decoration-none"><li class="mt-2">Playlist per una serata romantica 💕</li></a>
+                <a href="#" class="text-decoration-none"><li class="mt-2">Musica per un workout energico</li></a>
+                <a href="#" class="text-decoration-none"><li class="mt-2">Melodie per un'auto notturna 🚗</li></a>
+                <a href="#" class="text-decoration-none"><li class="mt-2">Brani per un momento di relax a casa</li></a>
+                <a href="#" class="text-decoration-none"><li class="mt-2">Musica perfetta per l'estate ☀️</li></a>
+                <a href="#" class="text-decoration-none"><li class="mt-2">Playlist per concentrarsi meglio</li></a>
+                <a href="#" class="text-decoration-none"><li class="mt-2">Classici anni '90</li></a>
+                <a href="#" class="text-decoration-none"><li class="mt-2">Mix di electro pop 🎧</li></a>
+                <a href="#" class="text-decoration-none"><li class="mt-2">Suoni acustici per chillare 🎸</li></a>
+                <a href="#" class="text-decoration-none"><li class="mt-2">Brani per un'atmosfera jazz 🎷</li></a>
+                <a href="#" class="text-decoration-none"><li class="mt-2">Hits del momento</li></a>
+                <a href="#" class="text-decoration-none"><li class="mt-2">Playlist per ballare tutta la notte 🕺</li></a>
+                <a href="#" class="text-decoration-none"><li class="mt-2">Musica indie per scoprire nuovi artisti</li></a>
+                <a href="#" class="text-decoration-none"><li class="mt-2">Brani pop per quando hai voglia di cantare 🎤</li></a>
+                <a href="#" class="text-decoration-none"><li class="mt-2">Playlist per una serata al chiuso</li></a>
+                <a href="#" class="text-decoration-none"><li class="mt-2">Rock classico da ascoltare</li></a>
+                <a href="#" class="text-decoration-none"><li class="mt-2">Melodie nuove e interessanti</li></a>
+                <a href="#" class="text-decoration-none"><li class="mt-2">Vibe chill per le tue pause 🧘‍♂️</li></a>
+                <a href="#" class="text-decoration-none"><li class="mt-2">Colonna sonora per l'inverno ❄️</li></a>
               </ul>
             </div>
           </div>
@@ -275,10 +275,10 @@
       <div class="row align-items-center">
         <!-- info canzone sezione -->
         <div class="col-3 d-flex align-items-center">
-          <img src="./assets/imgs/search/image-1.jpeg" height="50" width="50" alt="Album cover" />
+          <img src="./assets/imgs/search/image-1.jpeg" id="albumCover" height="50" width="50" alt="Album cover" />
           <div class="ms-2 text-white pe-3">
-            <p class="mb-0 text-white">Fat Funny Friend</p>
-            <small class="grigio">Maddie Zahm</small>
+            <p class="mb-0 text-white" id="songTitle2">Fat Funny Friend</p>
+            <small class="grigio" id="artistName1">Maddie Zahm</small>
           </div>
           <div>
             <button class="heart btn bg-transparent">
@@ -330,6 +330,7 @@
           <button class="btn text-white pe-1">
             <svg data-encore-id="icon" role="img" aria-hidden="true" viewBox="0 0 16 16" class="player">
               <path
+                fill="white"
                 d="M13.426 2.574a2.831 2.831 0 0 0-4.797 1.55l3.247 3.247a2.831 2.831 0 0 0 1.55-4.797zM10.5 8.118l-2.619-2.62A63303.13 63303.13 0 0 0 4.74 9.075L2.065 12.12a1.287 1.287 0 0 0 1.816 1.816l3.06-2.688 3.56-3.129zM7.12 4.094a4.331 4.331 0 1 1 4.786 4.786l-3.974 3.493-3.06 2.689a2.787 2.787 0 0 1-3.933-3.933l2.676-3.045 3.505-3.99z"
               ></path>
             </svg>
@@ -383,14 +384,23 @@
     <footer class="responsiveFooter container-fluid fixed-bottom d-block d-sm-none bg-black p-0 m-0">
       <div class="d-flex justify-content-between">
         <div class="d-flex justify-content-around align-items-center ms-5 gap-5">
-          <div id="imgIcon" class="rounded-circle bg-black d-flex justify-content-center align-items-center" style="width: 30px; height: 30px"></div>
+          <div id="imgIcon" class="rounded-circle bg-black d-flex justify-content-center align-items-center overflow-hidden" style="width: 30px; height: 30px">
+            <img
+              style="object-fit: cover"
+              id="album-img"
+              class="custom-shadow"
+              width="180px"
+              height="180px"
+              src="https://e-cdns-images.dzcdn.net/images/cover/971c39d2a04b89d6b7028fed705d3676/250x250-000000-80-0-0.jpg"
+            />
+          </div>
 
           <div id="songTitle" class="titleContainer text-white"><span class="text-white fs-4 ms-3 textMovement"></span></div>
         </div>
 
         <div class="d-flex justify-content-around align-items-center gap-3">
           <div>
-            <button class="btn bg-transparent">
+            <button class="heart btn bg-transparent">
               <i class="bi bi-heart text-white"></i>
             </button>
           </div>
@@ -422,7 +432,7 @@
         </div>
 
         <div>
-          <a href="./searchPage">
+          <a href="./searchpage.html">
             <button class="btn bg-transparent">
               <i class="bi bi-search text-white" id="search" style="height: 30px; width: 30px"> </i>
               <br />

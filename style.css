@@ -201,3 +201,23 @@ footer {
     margin-bottom: 118px;
   }
 }
+
+button:has(i),
+button:has(svg) {
+  outline: transparent !important;
+  box-shadow: 0 0 0 transparent !important;
+  border: transparent !important;
+}
+
+button:has(i):focus,
+button:has(svg):focus,
+button:has(i):active,
+button:has(svg):active {
+  outline: transparent !important;
+  box-shadow: 0 0 0 transparent !important;
+  border: transparent !important;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
