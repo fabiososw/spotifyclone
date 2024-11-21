@@ -222,3 +222,7 @@ button:has(svg):active {
   box-shadow: 0 0 0 transparent !important;
   border: transparent !important;
 }
+
+.cursor-pointer {
+  cursor: pointer;
+}
