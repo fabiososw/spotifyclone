@@ -225,3 +225,7 @@ button:has(svg):active {
 .cursor-pointer {
   cursor: pointer;
 }
+
+.navBtn {
+  background-color: rgba(50, 50, 50, 0.7) !important;
+}
