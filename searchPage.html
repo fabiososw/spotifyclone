@@ -35,12 +35,21 @@
           <div class="d-none d-lg-flex">
             <button type="button" id="houseBtn" class="rounded-circle bg-dark px-2 me-3 mt-2"><i class="text-white bi bi-house-door" style="font-size: 30px;"></i></button>
           </div> 
-          <form class="d-flex align-items-center h-100" style="width: 70%;">
-              <p class="h3 text-white fs-5 mb-0 d-block fw-bolder d-lg-none  ">CERCA</p>
-              <input type="text" class=" bg-dark text-white border-0 px-3 border-0 rounded-pill h-75 w-100" placeholder="Cosa vuoi ascoltare?" id="input" style="height: 90%;">
-              <button type="button" class="rounded-circle border-0 bg-transparent" id="searchBtn"><i class="text-white bi bi-search" style="font-size: 1.3rem;"></i></button>
-              <i class="bi bi-filter-square text-white-subtle" style="font-size: 1.3rem;"></i>
-          </form>    
+          <form class="d-flex align-items-center h-100 position-relative" style="width: 70%;">
+            <p class="h3 text-white fs-5 mb-0 d-block fw-bolder d-lg-none">CERCA</p>
+            <div class="position-relative w-100">
+              <input 
+                type="text" 
+                class="bg-dark text-white border-0 px-5 border-0 rounded-pill py-2 w-100" 
+                placeholder="Cosa vuoi ascoltare?" 
+                id="input" 
+                style="height: 100%;"
+              >
+              <i class="bi bi-search text-white position-absolute cursor-pointer  " style="top: 50%; left: 15px; transform: translateY(-50%); font-size: 1.3rem;"></i>
+              <i class="bi bi-filter-square text-white-subtle position-absolute" style="top: 50%; right: 15px; transform: translateY(-50%); font-size: 1.3rem;"></i>
+            </div>
+          </form>
+           
         </div>  
         <div class="col-12 col-lg-3 col-xxl-4" style="margin-left: auto;">
           <div class="d-flex align-items-center justify-content-end">
