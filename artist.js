@@ -114,7 +114,7 @@ function getArtistIdFromUrl() {
 
 // chiama l'api e stampa le top tracks
 function getTopTracks(artistId) {
-  fetch(`https://striveschool-api.herokuapp.com/api/deezer/artist/${artistId}/top?limit=5`, {
+  fetch(`https://striveschool-api.herokuapp.com/api/deezer/artist/${artistId}/top?limit=10`, {
     method: "GET"
   })
     .then((response) => {
