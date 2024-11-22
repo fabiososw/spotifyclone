@@ -134,16 +134,32 @@ function getTopTracks(artistId) {
 
           // html di ogni traccia
           trackElement.innerHTML = `
-            <p class="text-white fw-normal pe-3 pt-3">${index + 1}</p>
-            <img width="45px" src="${track.album.cover}" alt="${track.album.title}" />
-            <h6 class="text-white ps-3 fw-normal mb-0">${track.title}</h6>
-            <div>
-              <p class="m-0 ps-5">${track.rank.toLocaleString()}</p>
-            </div>
-            <div>
-              <p class="m-0 ms-5 ps-5">${formatDuration(track.duration)}</p>
-            </div>
-          `;
+  <div class="d-flex align-items-center" id="song1">
+    <span class="me-3">${index + 1}</span>
+    <div>
+      <span class="text-white d-flex align-items-start">${track.title}</span> 
+      <span class="sottotitolo d-flex align-items-start">${track.album.title}</span>
+    </div>
+  </div>
+
+  <div class="d-none d-sm-flex justify-content-end ms-auto" style="margin-right: 40%;">
+    <img width="45px" src="${track.album.cover}" alt="${track.album.title}" />
+  </div>
+
+  <div class="d-none d-sm-flex">
+    <p class="ascolti">${track.rank.toLocaleString()}</p>
+  </div>
+
+  <div class="d-none d-sm-flex">
+    <p class="durata">${formatDuration(track.duration)}</p>
+  </div>
+
+  <div class="d-flex d-sm-none">
+    <p>
+      <i class="bi bi-three-dots-vertical text-white"></i>
+    </p>
+  </div>
+`;
 
           // aggiungi il div al contenitore
           topTracksContainer.appendChild(trackElement);
