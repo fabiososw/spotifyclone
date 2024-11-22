@@ -87,7 +87,7 @@ getArtistDetails(artistNewId);
 // codice per il numero casuale dei mi piace
 const randomNumber = document.getElementById("randomNumber");
 
-const randomLikedNumber = Math.floor(Math.random() * 15 + 1);
+const randomLikedNumber = Math.floor(Math.random() * 23);
 randomNumber.innerText = `Hai messo mi piace a ${randomLikedNumber} brani`;
 
 // funzione per aggiungere il link all'artista
