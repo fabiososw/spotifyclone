@@ -91,14 +91,15 @@ function getMainAlbumDetails(albumId) {
 
           tracklistContainer.appendChild(trackDiv); // aggiungi il brano al DOM
 
-          trackDiv.addEventListener("click", () => {
-            const songTitle = document.getElementById("songTitle");
+          const song1 = document.getElementById("song1");
+          song1.addEventListener("click", () => {
+            //const songTitle = document.getElementById("songTitle");
             const imgIcon = document.getElementById("imgIcon");
             const songTitle2 = document.getElementById("songTitle2");
             const artistName1 = document.getElementById("artistName1");
 
             // aggiorna i dettagli del brano quando clicchi
-            songTitle.innerText = `${track.title}, ${track.artist.name}`;
+            //songTitle.innerText = `${track.title}, ${track.artist.name}`;
             songTitle2.innerText = `${track.title}`;
             artistName1.innerText = `${track.artist.name}`;
             albumCover.src = data.cover_medium; // aggiorna l'immagine dell'album;
