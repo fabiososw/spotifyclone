@@ -53,8 +53,8 @@ function getMainAlbumDetails(albumId) {
       albumTitle.innerText = data.title; // titolo album
       artistName.innerText = data.artist.name; // nome artista
       artistImg.src = data.artist.picture_medium; // immagine artista
-      albumCover.src = data.cover_medium;
-      const tracks = data.tracks.data; // ottieni la lista dei brani
+      /*       albumCover.src = data.cover_medium;
+       */ const tracks = data.tracks.data; // ottieni la lista dei brani
 
       tracklistContainer.innerHTML = ""; // svuota la lista dei brani
 
