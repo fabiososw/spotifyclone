@@ -234,3 +234,7 @@ button:has(svg):active {
   background: rgb(0, 0, 0);
   background: linear-gradient(360deg, rgba(0, 0, 0, 0.7848389355742297) 0%, rgba(0, 0, 0, 0) 100%);
 }
+
+#imgSrc {
+  cursor: pointer;
+}
