@@ -238,3 +238,6 @@ button:has(svg):active {
 #imgSrc {
   cursor: pointer;
 }
+.buttonHover:hover {
+  color: #1db954;
+}
