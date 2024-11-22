@@ -105,3 +105,6 @@ function addArtistLink(artistId, artistName) {
   artistElement.innerHTML = ""; // cancella quello che c'era prima dentro
   artistElement.appendChild(artistLink); // aggiungi il nuovo link all'elemento
 }
+document.getElementById('houseBtn').addEventListener('click', () => {
+  window.location.href = "homepage.html"
+})
