@@ -31,7 +31,7 @@ a:hover {
 }
 /* Centrale sfondo*/
 
-.col-7 {
+.center {
   background: rgb(33, 33, 33);
   background: linear-gradient(180deg, #212121 0%, rgba(32, 32, 32, 1) 30%, rgba(18, 18, 18, 1) 75%);
 }
