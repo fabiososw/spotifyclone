@@ -75,3 +75,13 @@ albums.forEach((album) => {
     window.location.href = `album.html?id=${albumId}`; // reindirizza alla pagina dell'album
   });
 });
+const salutoElement = document.getElementById("Buonasera");
+const ora = new Date().getHours();
+
+if (ora >= 5 && ora < 11) {
+  salutoElement.textContent = "Buongiorno";
+} else if (ora >= 11 && ora < 17) {
+  salutoElement.textContent = "Buonasera";
+} else {
+  salutoElement.textContent = "Ascolto notturno?";
+}
