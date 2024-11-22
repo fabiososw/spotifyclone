@@ -68,7 +68,7 @@ function getMainAlbumDetails(albumId) {
           trackDiv.classList.add("d-flex", "mt-3", "tracklist", "justify-content-between");
 
           trackDiv.innerHTML = `
-          <div class="d-flex align-items-center">
+          <div class="d-flex align-items-center" id="song1">
             <span class="me-3">${index + 1}</span>
             <div>
               <span class="text-white d-flex align-items-start">${track.title}</span> 
@@ -131,3 +131,12 @@ function getMainAlbumDetails(albumId) {
     window.location.href = "homepage.html";
   });
 }
+const song1 = document.getElementById("song1");
+
+/*song1.addEventListener("click", function () {
+  const artistName = document.getElementById("artistName");
+  const songName = document.getElementById("songName");
+
+  artistName.innerText = `${data.artist.name}`
+  
+});*/
