@@ -14,42 +14,70 @@
     />
     <link rel="stylesheet" href="style.css" />
   </head>
+
   <body class="h-100 w-100">
     <div class="container-fluid h-100 p-0">
       <div class="row h-100">
-        <div class="col-3 bg-black align-items-center justify-content-center ps-4" style="font-weight: 500;">
+        <div class="col-3 bg-black align-items-center justify-content-center ps-4" style="font-weight: 500">
           <div id="sezione1">
-          <div class="row ps-2 py-2 gy-2 mb-3">
-            <div class="col-12">
-              <i class="bi bi-three-dots rounded-50"></i>
+            <div class="row ps-2 py-2 gy-2 mb-3">
+              <div class="col-12">
+                <i class="bi bi-three-dots rounded-50"></i>
+              </div>
+              <div style="color: white" class="col-12">
+                <i class="bi bi-house-door me-2" id="houseBtn"></i>
+                <a href="homepage.html" class="text-decoration-none">Home</a>
+              </div>
+              <div class="col-12">
+                <i class="bi bi-search me-2"></i>
+                <a href="#" class="text-decoration-none">Cerca</a>
+              </div>
+              <div class="col-12">
+                <i class="bi bi-collection me-2"></i>
+                <a href="#" class="text-decoration-none">La tua libreria</a>
+              </div>
             </div>
-            <div style="color:white" class="col-12">
-              <i class="bi bi-house-door me-2" id="houseBtn"></i>
-              <a href="homepage.html" class="text-decoration-none ">Home</a>
+
+            <div class="row ps-2 d-none d-lg-block py-2 gy-3 align-items-center">
+              <div class="col-12 d-flex align-items-center">
+                <i class="bi bi-plus-square-fill grigio me-2" style="font-size: 20px"></i>
+                <a href="#" class="text-decoration-none">Crea Playlist</a>
+              </div>
+
+              <div class="col-12 d-flex align-items-center">
+                <img
+                  aria-hidden="true"
+                  draggable="false"
+                  loading="eager"
+                  src="https://misc.scdn.co/liked-songs/liked-songs-64.png"
+                  data-testid="entity-image"
+                  alt="Brani che ti piacciono"
+                  class="me-2"
+                  width="20px"
+                  height="20px"
+                  srcset="https://misc.scdn.co/liked-songs/liked-songs-64.png 32w, https://misc.scdn.co/liked-songs/liked-songs-64.png 64w"
+                />
+
+                <a href="#" class="text-decoration-none">Brani che ti piacciono</a>
+              </div>
+
+              <div class="col-12 d-flex align-items-center">
+                <img
+                  aria-hidden="true"
+                  draggable="false"
+                  loading="eager"
+                  src="https://misc.scdn.co/your-episodes/SE-64.png"
+                  data-testid="entity-image"
+                  alt="I tuoi episodi"
+                  class="me-2"
+                  width="20px"
+                  height="20px"
+                  srcset="https://misc.scdn.co/your-episodes/SE-64.png 32w, https://misc.scdn.co/your-episodes/SE-64.png 64w"
+                />
+
+                <a href="#" class="text-decoration-none">I tuoi episodi</a>
+              </div>
             </div>
-            <div class="col-12">
-              <i class="bi bi-search me-2"></i>
-              <a href="searchPage.html" class="text-decoration-none">Cerca</a>
-            </div>
-            <div class="col-12">
-              <i class="bi bi-collection me-2"></i>
-              <a href="#" class="text-decoration-none">La tua libreria</a>
-            </div>
-          </div>
-          <div class="row ps-2 py-2 gy-3">
-            <div class="col-12">
-              <img src="/assets/imgs/main/image-1.jpg" class="me-2" width="20px" height="20px" alt="" />
-              <a href="#" class="text-decoration-none">Crea Playlist</a>
-            </div>
-            <div class="col-12">
-              <img src="/assets/imgs/main/image-10.jpg" class="me-2" width="20px" height="20px" alt="" />
-              <a href="#" class="text-decoration-none">Brani che ti piacciono</a>
-            </div>
-            <div class="col-12">
-              <img src="/assets/imgs/main/image-11.jpg" class="me-2" width="20px" height="20px" alt="" />
-              <a href="#" class="text-decoration-none">I tuoi episodi</a>
-            </div>
-          </div>
           </div>
           <hr />
           <div class="row bt-1 gs-2 gy-2">
@@ -59,7 +87,7 @@
               data-bs-offset="0"
               class="scrollspy-example text-secondary"
               tabindex="0"
-              style="height: 400px; overflow-y: auto; font-size: 12px;"
+              style="height: 400px; overflow-y: auto; font-size: 12px"
             >
               <ul class="list-unstyled ps-2">
                 <li>Playlist per rilassarti in vacanza 🌴</li>
@@ -89,14 +117,22 @@
             </div>
           </div>
         </div>
-        
+
         <div class="col-7 center px-0">
-          <div data-bs-spy="scroll" data-bs-offset="0" class="scrollspy-example text-secondary" tabindex="0" style="height: 100vh; overflow-y: auto; overflow-x: hidden;">
+          <div
+            data-bs-spy="scroll"
+            data-bs-offset="0"
+            class="scrollspy-example text-secondary"
+            tabindex="0"
+            style="height: 100vh; overflow-y: auto; overflow-x: hidden"
+          >
             <main class="h-100 w-100">
               <div class="album pt-2">
                 <nav class="d-flex justify-content-between">
                   <div>
-                   <a href="homepage.html"> <button type="button" class="btn bg-black rounded-circle ps-2"><i class="bi bi-chevron-left text-white"></i></button></a>
+                    <a href="homepage.html">
+                      <button type="button" class="btn bg-black rounded-circle ps-2"><i class="bi bi-chevron-left text-white"></i></button
+                    ></a>
                     <button type="button" class="btn bg-black rounded-circle ps-2"><i class="bi bi-chevron-right text-white"></i></button>
                   </div>
                   <div class="btn-group bg-black">
@@ -161,77 +197,70 @@
                       <img id="artist-img" src="" width="70px" height="70px" style="border-radius: 50%; margin-right: 10px" alt="" />
                     </div>
                     <div>
-                      <h4 id="randomNumber" style="font-size:1rem; color:white; font-weight: bold;"></h4>
+                      <h4 id="randomNumber" style="font-size: 1rem; color: white; font-weight: bold"></h4>
                       <p id="artistName" class="artistaLiked" style="font-size: 0.8rem; margin: 0"></p>
-
                     </div>
-                  
                   </div>
-                      </div>
-                    </div>
-                  
-             
-           
-           
+                </div>
+              </div>
             </main>
-
           </div>
         </div>
 
         <!-- sidebar -->
         <div class="col-2 bg-black px-2 py-2">
           <div class="row">
-               <div class=" col-12 d-flex align-items-center justify-content-between h-auto w-100 mt-4">
-                  <div>
-                      <p class="h6 text-white m-0">Attività amici</p>
-                  </div>
-                  <div>
-                      <i class="bi bi-person-add"></i>
-                      <i class="bi bi-x text-secondary mx-1" style="font-size: 20px;"></i>
-                  </div>
+            <div class="col-12 d-flex align-items-center justify-content-between h-auto w-100 mt-4">
+              <div>
+                <p class="h6 text-white m-0">Attività amici</p>
               </div>
-              <div class="col-12 d-flex flex-direction-column mt-4">
-                  <div>
-                      <img src="/assets/imgs/main/image-2.jpg" width="20px" height="20px" style="border-radius: 50%; margin-right: 10px;" alt="">
-                  </div>
-                  <div>
-                     <p class="h6" style="font-size: 0.9rem;">Charlie Hookman</p>
-                     <p style="font-size: 0.5rem; margin: 0;">In Camera. Yumi Zouma</p>
-                     <p style="font-size: 0.8rem;">@ EP III</p>
-                  </div>
-                  <div   style=" width: 85px;" class="d-flex justify-content-end">
-                     <p style="font-size: 0.6rem; " class="lastSeen">4 ore</p>
-                  </div>
+              <div>
+                <i class="bi bi-person-add"></i>
+                <i class="bi bi-x text-secondary mx-1" style="font-size: 20px"></i>
               </div>
-              <div class="col-12 d-flex flex-direction-column mt-1">
-                  <div>
-                      <img src="/assets/imgs/main/image-3.jpg" width="20px" height="20px" style="border-radius: 50%; margin-right: 10px;" alt="">
-                  </div>
-                  <div>
-                     <p class="h6" style="font-size: 0.9rem;">lightdark02</p>
-                     <p style="font-size: 0.5rem; margin: 0;">Aimed to kill. Jade Le Mac</p>
-                     <p style="font-size: 0.8rem;">Aimed to Kill</p>
-                  </div>
-                  <div   style=" width: 110px;" class="d-flex justify-content-end">
-                     <p style="font-size: 0.6rem;" class="lastSeen">4 ore</p>
-                  </div>
+            </div>
+            <div class="col-12 d-flex flex-direction-column mt-4">
+              <div>
+                <img src="/assets/imgs/main/image-2.jpg" width="20px" height="20px" style="border-radius: 50%; margin-right: 10px" alt="" />
               </div>
-              <div class="col-12 d-flex flex-direction-column mt-1">
-                  <div>
-                      <img src="/assets/imgs/main/image-4.jpg" width="20px" height="20px" style="border-radius: 50%; margin-right: 10px;" alt="">
-                  </div>
-                  <div>
-                     <p class="h6" style="font-size: 0.9rem;">Valeria Traverso</p>
-                     <p style="font-size: 0.5rem; margin: 0;">New Kings.Sleeping Wolf</p>
-                     <p style="font-size: 0.8rem;">🎵Twint Badass Mood</p>
-                  </div>
-                  <div   style=" width: 75px;" class="d-flex justify-content-end">
-                     <p style="font-size: 0.6rem;" class="lastSeen">4 ore</p>
-                  </div>
+              <div>
+                <p class="h6" style="font-size: 0.9rem">Charlie Hookman</p>
+                <p style="font-size: 0.5rem; margin: 0">In Camera. Yumi Zouma</p>
+                <p style="font-size: 0.8rem">@ EP III</p>
               </div>
+              <div style="width: 85px" class="d-flex justify-content-end">
+                <p style="font-size: 0.6rem" class="lastSeen">4 ore</p>
               </div>
-          </div>    
-      
+            </div>
+            <div class="col-12 d-flex flex-direction-column mt-1">
+              <div>
+                <img src="/assets/imgs/main/image-3.jpg" width="20px" height="20px" style="border-radius: 50%; margin-right: 10px" alt="" />
+              </div>
+              <div>
+                <p class="h6" style="font-size: 0.9rem">lightdark02</p>
+                <p style="font-size: 0.5rem; margin: 0">Aimed to kill. Jade Le Mac</p>
+                <p style="font-size: 0.8rem">Aimed to Kill</p>
+              </div>
+              <div style="width: 110px" class="d-flex justify-content-end">
+                <p style="font-size: 0.6rem" class="lastSeen">4 ore</p>
+              </div>
+            </div>
+            <div class="col-12 d-flex flex-direction-column mt-1">
+              <div>
+                <img src="/assets/imgs/main/image-4.jpg" width="20px" height="20px" style="border-radius: 50%; margin-right: 10px" alt="" />
+              </div>
+              <div>
+                <p class="h6" style="font-size: 0.9rem">Valeria Traverso</p>
+                <p style="font-size: 0.5rem; margin: 0">New Kings.Sleeping Wolf</p>
+                <p style="font-size: 0.8rem">🎵Twint Badass Mood</p>
+              </div>
+              <div style="width: 75px" class="d-flex justify-content-end">
+                <p style="font-size: 0.6rem" class="lastSeen">4 ore</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <!-- il footer inizia qui -->
         <footer class="container-fluid d-block fixed-bottom py-2">
           <div class="row align-items-center">
@@ -247,7 +276,7 @@
               </div>
             </div>
             <!-- centro playback controlli -->
-            <div class="col-8 col-md-6 d-flex  flex-column align-items-center">
+            <div class="col-8 col-md-6 d-flex flex-column align-items-center">
               <p class="d-md-none text-white">...Highest in the Romm-Travis Scott</p>
               <!-- bottoni controlli -->
               <div class="player d-none d-md-flex justify-content-center">
@@ -263,7 +292,7 @@
                 <button class="btn text-white d-none d-md-inline bg-transparent px-2 fs-3 py-0">
                   <i class="bi bi-skip-end-fill"></i>
                 </button>
-                <button class="btn  bg-transparent px-2 fs-5 text-white py-0 mb-1">
+                <button class="btn bg-transparent px-2 fs-5 text-white py-0 mb-1">
                   <svg data-encore-id="icon" role="img" aria-hidden="true" viewBox="0 0 16 16 ">
                     <path
                       d="M0 4.75A3.75 3.75 0 0 1 3.75 1h8.5A3.75 3.75 0 0 1 16 4.75v5a3.75 3.75 0 0 1-3.75 3.75H9.81l1.018 1.018a.75.75 0 1 1-1.06 1.06L6.939 12.75l2.829-2.828a.75.75 0 1 1 1.06 1.06L9.811 12h2.439a2.25 2.25 0 0 0 2.25-2.25v-5a2.25 2.25 0 0 0-2.25-2.25h-8.5A2.25 2.25 0 0 0 1.5 4.75v5A2.25 2.25 0 0 0 3.75 12H5v1.5H3.75A3.75 3.75 0 0 1 0 9.75v-5z"
@@ -271,7 +300,7 @@
                   </svg>
                 </button>
               </div>
-    
+
               <!-- Progress Bar -->
               <div class="d-flex d-none d-md-flex justify-content-between text-white w-75 align-items-center">
                 <small class="mx-2">1:30</small>
@@ -281,11 +310,11 @@
                 <small class="ms-2">3:00</small>
               </div>
             </div>
-            
+
             <!-- destra -->
             <div class="player1 player col-3 d-flex justify-content-end align-items-center">
               <!-- Volume Slider -->
-    
+
               <!-- altri contorlli -->
               <button class="btn d-none d-md-flex text-white pe-1">
                 <svg data-encore-id="icon" role="img" aria-hidden="true" viewBox="0 0 16 16" class="player">
@@ -301,7 +330,7 @@
                   ></path>
                 </svg>
               </button>
-              <button class="btn text-white p-0" style="width: 60px; height: 60px;">
+              <button class="btn text-white p-0" style="width: 60px; height: 60px">
                 <svg data-encore-id="icon" role="img" aria-hidden="true" viewBox="0 0 16 16" class="Svg-sc-ytk21e-0 dYnaPI">
                   <path
                     d="M6 2.75C6 1.784 6.784 1 7.75 1h6.5c.966 0 1.75.784 1.75 1.75v10.5A1.75 1.75 0 0 1 14.25 15h-6.5A1.75 1.75 0 0 1 6 13.25V2.75zm1.75-.25a.25.25 0 0 0-.25.25v10.5c0 .138.112.25.25.25h6.5a.25.25 0 0 0 .25-.25V2.75a.25.25 0 0 0-.25-.25h-6.5zm-6 0a.25.25 0 0 0-.25.25v6.5c0 .138.112.25.25.25H4V11H1.75A1.75 1.75 0 0 1 0 9.25v-6.5C0 1.784.784 1 1.75 1H4v1.5H1.75zM4 15H2v-1.5h2V15z"
@@ -310,7 +339,7 @@
                 </svg>
               </button>
               <i class="bi bi-heart text-white fs-3 ms-2"></i>
-              <i class=" ms-2 bi bi-play-fill fs-2 text-white"></i>
+              <i class="ms-2 bi bi-play-fill fs-2 text-white"></i>
               <button class="btn d-none d-md-bflex text-white pe-1">
                 <svg
                   data-encore-id="icon"
@@ -339,24 +368,25 @@
               </button>
             </div>
           </div>
-        <div class="bg-opacity-0 d-md-none d-block" style="height: 70px;">
-          <div class="d-flex h-auto justify-content-around bg-none w-100">
-            <div class="d-flex flex-column w-25 align-items-center vertical-align-middle bg-transparent ">
-              <i class="text-white bi bi-house-door" style="font-size: 30px;" id="houseBtn"></i>
-              <p class="text-secondary fs-4">Home</p>
-            </div>
-            <div class="d-flex flex-column w-25 align-items-center vertical-align-middle bg-transparent ">
-              <i class="text-white bi bi-search" style="font-size: 1.7rem;"></i>
-              <p class="text-secondary fs-4">Search</p>
-            </div>
-            <div class="d-flex flex-column w-25 align-items-center vertical-align-middle bg-transparent ">
-               <i class="text-white bi bi-collection me-2 ms-3" style="font-size: 1.5rem;"></i>
-               <p class="text-secondary fs-4">Library</p>
+          <div class="bg-opacity-0 d-md-none d-block" style="height: 70px">
+            <div class="d-flex h-auto justify-content-around bg-none w-100">
+              <div class="d-flex flex-column w-25 align-items-center vertical-align-middle bg-transparent">
+                <i class="text-white bi bi-house-door" style="font-size: 30px" id="houseBtn"></i>
+                <p class="text-secondary fs-4">Home</p>
+              </div>
+              <div class="d-flex flex-column w-25 align-items-center vertical-align-middle bg-transparent">
+                <i class="text-white bi bi-search" style="font-size: 1.7rem"></i>
+                <p class="text-secondary fs-4">Search</p>
+              </div>
+              <div class="d-flex flex-column w-25 align-items-center vertical-align-middle bg-transparent">
+                <i class="text-white bi bi-collection me-2 ms-3" style="font-size: 1.5rem"></i>
+                <p class="text-secondary fs-4">Library</p>
+              </div>
             </div>
           </div>
-        </div>
         </footer>
-
+      </div>
+    </div>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
