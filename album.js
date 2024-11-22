@@ -51,7 +51,10 @@ function getMainAlbumDetails(albumId) {
       // imposta i dati dell'album nell'HTML
       albumImg.src = data.cover_medium; // immagine album
       albumTitle.innerText = data.title; // titolo album
-      artistName.innerText = data.artist.name; // nome artista
+      artistName.innerHTML = `<p class="text-white mt-1" id="artistName" style="font-size: 0.7rem;">
+        <a class="text-white mt-1" id="artist-link" href="artist.html?id=${data.artist.id}" style="text-decoration: none; color: inherit; font-size: 0,7rem;">
+          ${data.artist.name}
+        </a></p>`; // nome artista
       artistImg.src = data.artist.picture_medium; // immagine artista
       /*       albumCover.src = data.cover_medium;
        */ const tracks = data.tracks.data; // ottieni la lista dei brani
@@ -59,11 +62,12 @@ function getMainAlbumDetails(albumId) {
       tracklistContainer.innerHTML = ""; // svuota la lista dei brani
 
       // aggiungi i brani uno per uno
-      tracks.forEach((track, index) => {
-        const trackDiv = document.createElement("div");
-        trackDiv.classList.add("d-flex", "mt-3", "tracklist", "justify-content-between");
+      tracks
+        .forEach((track, index) => {
+          const trackDiv = document.createElement("div");
+          trackDiv.classList.add("d-flex", "mt-3", "tracklist", "justify-content-between");
 
-        trackDiv.innerHTML = `
+          trackDiv.innerHTML = `
           <div class="d-flex align-items-center">
             <span class="me-3">${index + 1}</span>
             <div>
@@ -85,54 +89,45 @@ function getMainAlbumDetails(albumId) {
           </div>
         `;
 
-        tracklistContainer.appendChild(trackDiv); // aggiungi il brano al DOM
+          tracklistContainer.appendChild(trackDiv); // aggiungi il brano al DOM
 
-        trackDiv.addEventListener("click", () => {
-          const songTitle = document.getElementById("songTitle");
-          const imgIcon = document.getElementById("imgIcon");
-          const songTitle2 = document.getElementById("songTitle2");
-          const artistName1 = document.getElementById("artistName1");
+          trackDiv.addEventListener("click", () => {
+            const songTitle = document.getElementById("songTitle");
+            const imgIcon = document.getElementById("imgIcon");
+            const songTitle2 = document.getElementById("songTitle2");
+            const artistName1 = document.getElementById("artistName1");
 
-          // aggiorna i dettagli del brano quando clicchi
-          songTitle.innerText = `${track.title}, ${track.artist.name}`;
-          songTitle2.innerText = `${track.title}`;
-          artistName1.innerText = `${track.artist.name}`;
-          albumCover.src = data.cover_medium; // aggiorna l'immagine dell'album
+            // aggiorna i dettagli del brano quando clicchi
+            songTitle.innerText = `${track.title}, ${track.artist.name}`;
+            songTitle2.innerText = `${track.title}`;
+            artistName1.innerText = `${track.artist.name}`;
+            albumCover.src = data.cover_medium; // aggiorna l'immagine dell'album;
+            mainAlbumSubTitle.innerText = data.genres.data[0].name;
+
+            // Aggiungi l'evento di click sull'immagine dell'album per andare alla pagina dell'album
+            mainAlbumImg.addEventListener("click", function () {
+              window.location.href = `album.html?id=${data.id}`;
+            });
+          });
+        })
+        .catch((error) => {
+          console.error("Errore nel recuperare i dettagli dell'album:", error); // se qualcosa va storto
         });
-      });
-    })
-    .catch((error) => {
-      console.error("Errore nel recuperare i dettagli dell'album:", error); // se qualcosa va storto
     });
-}
 
-// codice per icona cuore che si riempe al click
-document.querySelector(".heart").addEventListener("click", function () {
-  const icon = this.querySelector("i");
-  // cambia classe icona quando si clicca
-  if (icon.classList.contains("bi-heart")) {
-    icon.classList.remove("bi-heart");
-    icon.classList.add("bi-heart-fill");
-  } else {
-    icon.classList.remove("bi-heart-fill");
-    icon.classList.add("bi-heart");
-  }
-});
-document.getElementById("houseBtn").addEventListener("click", () => {
-  window.location.href = "homepage.html";
-});
-
-function addArtistLink(artistId, artistName) {
-  const artistElement = document.getElementById("artist-name"); // prendi l'elemento dove metteremo il link
-
-  // crea il link dinamicamente
-  const artistLink = document.createElement("a"); // crea un tag <a> per il link
-  artistLink.href = `artist.html?id=${artistId}`; // metti il link alla pagina dell'artista
-  artistLink.textContent = artistName; // imposta il nome dell'artista come testo del link
-  artistLink.style.textDecoration = "none"; // niente sottolineatura
-  artistLink.style.color = "inherit"; // usa lo stesso colore del testo
-
-  // rimuove il contenuto vecchio e mette il nuovo link
-  artistElement.innerHTML = ""; // cancella quello che c'era prima dentro
-  artistElement.appendChild(artistLink); // aggiungi il nuovo link all'elemento
+  // codice per icona cuore che si riempe al click
+  document.querySelector(".heart").addEventListener("click", function () {
+    const icon = this.querySelector("i");
+    // cambia classe icona quando si clicca
+    if (icon.classList.contains("bi-heart")) {
+      icon.classList.remove("bi-heart");
+      icon.classList.add("bi-heart-fill");
+    } else {
+      icon.classList.remove("bi-heart-fill");
+      icon.classList.add("bi-heart");
+    }
+  });
+  document.getElementById("houseBtn").addEventListener("click", () => {
+    window.location.href = "homepage.html";
+  });
 }
