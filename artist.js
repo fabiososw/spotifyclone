@@ -105,6 +105,74 @@ function addArtistLink(artistId, artistName) {
   artistElement.innerHTML = ""; // cancella quello che c'era prima dentro
   artistElement.appendChild(artistLink); // aggiungi il nuovo link all'elemento
 }
-document.getElementById('houseBtn').addEventListener('click', () => {
-  window.location.href = "homepage.html"
-})
+
+// prendi l'id dell'artista dall'url
+function getArtistIdFromUrl() {
+  const urlParams = new URLSearchParams(window.location.search); // parametri url
+  return urlParams.get("id"); // ritorna l'id
+}
+
+// chiama l'api e stampa le top tracks
+function getTopTracks(artistId) {
+  fetch(`https://striveschool-api.herokuapp.com/api/deezer/artist/${artistId}/top?limit=5`, {
+    method: "GET"
+  })
+    .then((response) => {
+      if (!response.ok) throw new Error("errore nel recuperare le tracce");
+      return response.json(); // trasformo in json
+    })
+    .then((data) => {
+      const topTracksContainer = document.getElementById("top-tracks"); // contenitore dove mettere le tracce
+      if (topTracksContainer) {
+        topTracksContainer.innerHTML = ""; // pulisci eventuale contenuto vecchio
+
+        // ciclo sulle tracce
+        data.data.forEach((track, index) => {
+          // crea il div di ogni traccia
+          const trackElement = document.createElement("div");
+          trackElement.classList.add("col", "d-flex", "align-items-center", "justify-content-between", "ps-4");
+
+          // html di ogni traccia
+          trackElement.innerHTML = `
+            <p class="text-white fw-normal pe-3 pt-3">${index + 1}</p>
+            <img width="45px" src="${track.album.cover}" alt="${track.album.title}" />
+            <h6 class="text-white ps-3 fw-normal mb-0">${track.title}</h6>
+            <div>
+              <p class="m-0 ps-5">${track.rank.toLocaleString()}</p>
+            </div>
+            <div>
+              <p class="m-0 ms-5 ps-5">${formatDuration(track.duration)}</p>
+            </div>
+          `;
+
+          // aggiungi il div al contenitore
+          topTracksContainer.appendChild(trackElement);
+        });
+      }
+    })
+    .catch((error) => {
+      console.error("errore:", error);
+      alert("impossibile caricare le tracce dell'artista.");
+    });
+}
+
+// funzione per formattare durata in mm:ss
+function formatDuration(seconds) {
+  const minutes = Math.floor(seconds / 60); // minuti
+  const remainingSeconds = seconds % 60; // secondi
+  return `${minutes}:${remainingSeconds.toString().padStart(2, "0")}`; // formatta
+}
+
+// prendi l'id dinamicamente dall'url
+const artistId = getArtistIdFromUrl();
+
+// controlla se c'è un id e carica le tracce
+if (artistId) {
+  getTopTracks(artistId); // chiama funzione per tracce
+} else {
+  console.error("id dell'artista non trovato nell'url");
+  alert("id dell'artista non trovato.");
+}
+document.getElementById("houseBtn").addEventListener("click", () => {
+  window.location.href = "homepage.html";
+});
