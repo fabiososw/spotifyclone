@@ -1,0 +1,243 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow-x: hidden; /* Rimuove la scrollbar orizzontale */
+  overflow-y: hidden; /* Rimuove la scrollbar orizzontale */
+}
+
+/* colore tutti gli elementi*/
+body,
+h1,
+h2,
+h3,
+h5,
+h6,
+p,
+a,
+span,
+div {
+  color: #928d88 !important; /* Colore di tutto il testo */
+}
+
+/* Link */
+a {
+  color: #928d88 !important; /* colore link */
+}
+
+a:hover {
+  color: #7a7b76 !important; /* hover scuro per link */
+}
+/* Centrale sfondo*/
+
+.center {
+  background: rgb(33, 33, 33);
+  background: linear-gradient(180deg, #212121 0%, rgba(32, 32, 32, 1) 30%, rgba(18, 18, 18, 1) 75%);
+}
+
+.shadow-left {
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.shadow-right {
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+}
+
+::-webkit-scrollbar {
+  width: 12px; /* Larghezza della scrollbar */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #928d88ab;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #000; /* sfondo della track */
+}
+
+::-webkit-scrollbar-button {
+  display: none; /* no freccette scrollbar */
+}
+footer {
+  padding: 5px;
+  font-size: 0.9em;
+  /*max-height: 70px !important;*/
+  overflow: hidden !important;
+  background: rgb(33, 33, 33);
+  background: linear-gradient(180deg, rgba(33, 33, 33, 1) 0%, rgba(32, 32, 32, 1) 90%, rgba(18, 18, 18, 1) 100%);
+  border-top: 2px solid rgb(51, 51, 51);
+}
+.progress {
+  height: 5px;
+  background-color: #928d88;
+  border-radius: 5px;
+}
+
+.progress-bar:hover {
+  background-color: #1db954;
+}
+
+.progress-bar {
+  background-color: #fff;
+  transition: background-color 0.3s ease;
+}
+
+.grigio {
+  color: #928d88 !important;
+}
+
+.player svg {
+  height: 20px;
+  width: 20px;
+}
+
+.player svg path {
+  fill: currentColor;
+}
+
+.player1 svg {
+  color: #b3b3b3;
+  height: 17px;
+  width: 17px;
+}
+
+.player svg:hover {
+  color: white;
+}
+
+.pinguiniTattici {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+}
+
+.pinnguiniDescription {
+  color: #fff !important;
+}
+
+/*@media (max-width: 576px) {
+  .album,
+  .songs {
+    background: none !important;
+  }
+}*/
+
+@media (max-width: 576px) {
+  .songs {
+    background: rgb(0, 0, 0);
+    background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(38, 38, 38, 1) 100%);
+  }
+  .album {
+    background: rgb(38, 38, 38);
+    background: linear-gradient(0deg, rgb(22, 22, 22) 0%, rgb(51, 51, 51) 100%);
+  }
+}
+.album {
+  background: rgb(38, 38, 38);
+  background: linear-gradient(0deg, rgb(22, 22, 22) 0%, rgb(51, 51, 51) 100%);
+}
+.durata {
+  color: #b3b3b3 !important;
+}
+.titolo {
+  text-shadow: 2px 2px 5px rgb(116, 116, 116);
+}
+.spotify {
+  color: #1db954;
+}
+
+.songs {
+  background: rgb(10, 10, 10);
+  background: linear-gradient(0deg, rgb(10, 10, 9) 0%, rgb(24, 24, 23) 100%);
+}
+
+.icon1 {
+  height: 20px !important;
+  width: 20px !important;
+}
+
+.responsiveFooter {
+  background-color: #000;
+}
+
+.btnPlay:hover {
+  color: #1db954;
+  transform: scale(1.1);
+  transition: transform 0.2s ease;
+}
+
+/*.heart:hover {
+  transform: scale(1.1);
+  transition: transform 0.2s ease;
+  background: white;
+}*/
+
+.heart .bi-heart,
+.heart .bi-heart-fill {
+  transition: color 0.3s ease; /* Transizione per il colore */
+}
+
+.btnHover:hover {
+  transform: scale(1.1);
+  transition: transform 0.2s ease;
+}
+
+.textMovement {
+  display: inline-block;
+  white-space: nowrap;
+  animation: scroll-left 10s linear infinite;
+}
+@keyframes scroll-left {
+  0% {
+    transform: translateX(100%); /* Inizia fuori dal lato destro del contenitore */
+  }
+  100% {
+    transform: translateX(-100%); /* Termina fuori dal lato sinistro del contenitore */
+  }
+}
+
+.songs {
+  margin-bottom: 96px;
+}
+@media (max-width: 768px) {
+  .songs {
+    margin-bottom: 118px;
+  }
+}
+
+button:has(i),
+button:has(svg) {
+  outline: transparent !important;
+  box-shadow: 0 0 0 transparent !important;
+  border: transparent !important;
+}
+
+button:has(i):focus,
+button:has(svg):focus,
+button:has(i):active,
+button:has(svg):active {
+  outline: transparent !important;
+  box-shadow: 0 0 0 transparent !important;
+  border: transparent !important;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.navBtn1 {
+  background-color: rgba(24, 24, 24, 0.7) !important;
+}
+
+.bgGradient {
+  background: rgb(0, 0, 0);
+  background: linear-gradient(360deg, rgba(0, 0, 0, 0.7848389355742297) 0%, rgba(0, 0, 0, 0) 100%);
+}
+
+#imgSrc {
+  cursor: pointer;
+}
+.buttonHover:hover {
+  color: #1db954;
+}
