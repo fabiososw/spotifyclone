@@ -135,8 +135,8 @@ function getTopTracks(artistId) {
           // html di ogni traccia
           trackElement.innerHTML = `
           <div class="d-flex align-items-center py-1" id="song1">
+          <span class="me-3">${index + 1}</span>
             <img class="me-3" width="45px" src="${track.album.cover}" alt="${track.album.title}" />
-            <span class="me-3">${index + 1}</span>
             <div>
               <span class="text-white d-flex align-items-start">${track.title}</span> 
               <span class="sottotitolo d-flex align-items-start">${track.album.title}</span>
