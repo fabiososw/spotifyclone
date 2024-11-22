@@ -134,34 +134,30 @@ function getTopTracks(artistId) {
 
           // html di ogni traccia
           trackElement.innerHTML = `
-  <div class="d-flex align-items-center" id="song1">
-    <span class="me-3">${index + 1}</span>
-    <div>
-      <span class="text-white d-flex align-items-start">${track.title}</span> 
-      <span class="sottotitolo d-flex align-items-start">${track.album.title}</span>
-    </div>
-  </div>
+          <div class="d-flex align-items-center" id="song1">
+            <img class="me-3" width="45px" src="${track.album.cover}" alt="${track.album.title}" />
+            <span class="me-3">${index + 1}</span>
+            <div>
+              <span class="text-white d-flex align-items-start">${track.title}</span> 
+              <span class="sottotitolo d-flex align-items-start">${track.album.title}</span>
+            </div>
+          </div>
+        
+          <div class="d-none d-sm-flex justify-content-end ms-auto" style="margin-right: 20%;">
+            <p class="ascolti">${track.rank.toLocaleString()}</p>
+          </div>
+        
+          <div class="d-none d-sm-flex justify-content-end" style="margin-right: 5%;">
+            <p class="durata">${formatDuration(track.duration)}</p>
+          </div>
+        
+          <div class="d-flex d-sm-none">
+            <p>
+              <i class="bi bi-three-dots-vertical text-white"></i>
+            </p>
+          </div>
+        `;
 
-  <div class="d-none d-sm-flex justify-content-end ms-auto" style="margin-right: 40%;">
-    <img width="45px" src="${track.album.cover}" alt="${track.album.title}" />
-  </div>
-
-  <div class="d-none d-sm-flex">
-    <p class="ascolti">${track.rank.toLocaleString()}</p>
-  </div>
-
-  <div class="d-none d-sm-flex">
-    <p class="durata">${formatDuration(track.duration)}</p>
-  </div>
-
-  <div class="d-flex d-sm-none">
-    <p>
-      <i class="bi bi-three-dots-vertical text-white"></i>
-    </p>
-  </div>
-`;
-
-          // aggiungi il div al contenitore
           topTracksContainer.appendChild(trackElement);
         });
       }
