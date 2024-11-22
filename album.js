@@ -118,3 +118,6 @@ document.querySelector(".heart").addEventListener("click", function () {
     icon.classList.add("bi-heart");
   }
 });
+document.getElementById('houseBtn').addEventListener('click', () => {
+  window.location.href = "homepage.html"
+})

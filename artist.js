@@ -173,3 +173,6 @@ if (artistId) {
   console.error("id dell'artista non trovato nell'url");
   alert("id dell'artista non trovato.");
 }
+document.getElementById("houseBtn").addEventListener("click", () => {
+  window.location.href = "homepage.html";
+});
