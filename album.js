@@ -121,3 +121,18 @@ document.querySelector(".heart").addEventListener("click", function () {
 document.getElementById("houseBtn").addEventListener("click", () => {
   window.location.href = "homepage.html";
 });
+
+function addArtistLink(artistId, artistName) {
+  const artistElement = document.getElementById("artist-name"); // prendi l'elemento dove metteremo il link
+
+  // crea il link dinamicamente
+  const artistLink = document.createElement("a"); // crea un tag <a> per il link
+  artistLink.href = `artist.html?id=${artistId}`; // metti il link alla pagina dell'artista
+  artistLink.textContent = artistName; // imposta il nome dell'artista come testo del link
+  artistLink.style.textDecoration = "none"; // niente sottolineatura
+  artistLink.style.color = "inherit"; // usa lo stesso colore del testo
+
+  // rimuove il contenuto vecchio e mette il nuovo link
+  artistElement.innerHTML = ""; // cancella quello che c'era prima dentro
+  artistElement.appendChild(artistLink); // aggiungi il nuovo link all'elemento
+}
