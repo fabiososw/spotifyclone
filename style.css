@@ -226,11 +226,11 @@ button:has(svg):active {
   cursor: pointer;
 }
 
-.navBtn {
-  background-color: rgba(50, 50, 50, 0.7) !important;
+.navBtn1 {
+  background-color: rgba(24, 24, 24, 0.7) !important;
 }
 
 .bgGradient {
-  background: rgb(18, 18, 18);
-  background: linear-gradient(360deg, rgba(18, 18, 18, 1) 0%, rgba(0, 0, 0, 0.08175770308123254) 100%);
+  background: rgb(0, 0, 0);
+  background: linear-gradient(360deg, rgba(0, 0, 0, 0.7848389355742297) 0%, rgba(0, 0, 0, 0) 100%);
 }
