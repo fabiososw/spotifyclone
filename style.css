@@ -141,7 +141,7 @@ footer {
   color: #b3b3b3 !important;
 }
 .titolo {
-  text-shadow: 2px 2px 5px white;
+  text-shadow: 2px 2px 5px rgb(116, 116, 116);
 }
 .spotify {
   color: #1db954;
